@@ -140,7 +140,8 @@ dict_items([('No', 'A001'), ('Name', 'beomwoo'), ('phone', '010-1111-2222'), ('B
 
 > 말 그대로 하나의 무언가를 '카리킨다' 라는 의미.
 
-- 참고용 이미
+- 참고용 이미지
+
 ![indexing_image](https://media.vlpt.us/post-images/ceres/6b72ebd0-4336-11ea-bda0-8d09ce94fe71/%EC%BA%A1%EC%B2%98.PNG)
 
 <pre>
@@ -167,6 +168,7 @@ dict_items([('No', 'A001'), ('Name', 'beomwoo'), ('phone', '010-1111-2222'), ('B
 > 슬라이싱은 특정 범위를 가리키는 것, 잘라 내는 것을 의미한다.
 
 - 참고용 이미지
+
 ![Slicing_image](https://media.vlpt.us/post-images/ceres/617c4870-4349-11ea-9cc9-bd6fa31ea7d5/%EC%BA%A1%EC%B2%98.PNG)
 
 <pre>
