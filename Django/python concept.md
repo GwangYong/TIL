@@ -86,12 +86,17 @@ Flase
 'Birth':'0722'}
 </pre>
 
+<br>
+
 > 딕셔너리 자료형이 가진 모든 키 값을 얻으려면 keys() 함수를 이용한다.
+
 
 <pre>
 >>> dic1.keys()
 dict_keys(['No', 'Name', 'Phone', 'Birth'])
 </pre>
+
+<br>
 
 > 딕셔너리 자료형이 가진 모든 value 값을 얻으려면 values() 함수를 이용한다.
 
@@ -100,12 +105,16 @@ dict_keys(['No', 'Name', 'Phone', 'Birth'])
 dict_values(['A001', 'beomwoo', '010-1111-2222', '0722'])
 </pre>
 
+<br>
+
 > 대응되는 key와 value 쌍 모두를 얻으려면 items() 함수를 사용한다.
 
 <pre>
 >>> dic1.items()
 dict_items([('No', 'A001'), ('Name', 'beomwoo'), ('phone', '010-1111-2222'), ('Birth', '0722')])
 </pre>
+
+<br>
 
 > 딕셔너리 자료형에 key-value 쌍을 추가하려면, 단순히 추가할 key값을 입력한 후, "="기호를 이용해 넣을 value 값을 입력해주면 된다.
 
@@ -114,6 +123,8 @@ dict_items([('No', 'A001'), ('Name', 'beomwoo'), ('phone', '010-1111-2222'), ('B
 >>> dic1
 {'NO':'A001', 'Name':'beomwoo', 'phone':'010-1111-2222', 'Birth':'0722', 'hobby':'programming'}
 </pre>
+
+<br>
 
 > 딕셔너리 자료형에 key-value 쌍을 삭제하려면 del 함수를 이용한다.
 
