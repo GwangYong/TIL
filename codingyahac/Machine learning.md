@@ -1,7 +1,7 @@
 
-#기계학습(Machine learning)
+# 기계학습(Machine learning)
 
-> [생활코딩의 머신러닝1](https://opentutorials.org/course/4548) <br>
+> **[생활코딩의 머신러닝1](https://opentutorials.org/course/4548)** <br>
 > 인공지능을 구현하는 기술인 머신러닝(Machine learning)을 다루는 수업. <br>
 > 코딩은 다루지 않으며, 간단한 머신러닝의 개념이나 기본을 배움.
 
