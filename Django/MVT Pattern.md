@@ -1,6 +1,5 @@
 # MVT 패턴
 
-<br>
 
 ### MVT 패턴
 - Model + View + Template

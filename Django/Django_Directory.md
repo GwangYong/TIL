@@ -24,3 +24,19 @@ Django_m
 `wsgi.py` 는 현재 프로젝트를 서비스하기 위한 WSGI 호환 웹 서버의 진입점이다.
 
 `__init__.py` 는 Python으로 하여금 이 디렉토리를 패키지처럼 다루라고 알려주는 용도의 단순한 빈 파일이다.
+
+### Django의 동작 원리(구조)
+
+- Django의 구조(MTV Pattern)
+    - Model(데이터 관리)
+    - Template(사용자가 보는 화면)
+    - View(중간 관리자)
+    
+- Django의 동작 원리
+    - 사용자가 1번 강의를 보겠다고 요청을 보냄(URL 주소 입력)
+    - View(중간 관리자)는 받은 요청을 확인하고, Model(데이터 관리)에 1번 강의를 찾아달라고 지시를 내림.
+    - Model(데이터 관리)은 Database에서 1번 강의를 찾아서 View(중간 관리자)에게 전달
+    - View(중간 관리자)는 1번 강의를 Template에 전달하여, HTML 파일과 조합하여 화면을 사용자에게 전달.
+    
+![Django MTV Pattern](https://i.imgur.com/7wc39KX.png)
+
