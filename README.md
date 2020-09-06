@@ -7,3 +7,6 @@
 3. 의미없는 커밋 이름은 사용하지 않는다.
 4. 매일 새롭게 배우거나, 삽질한 경험등을 적는다.
 ---
+
+- Development Methodology
+- - ![Waterfall or Agile](https://github.com/yagi4168/TIL/blob/master/Development%20Methodology/Waterfall%20or%20Agile.md)
