@@ -18,15 +18,17 @@
 - Development Methodology
   - [Waterfall or Agile](https://github.com/yagi4168/TIL/blob/master/Development%20Methodology/Waterfall%20or%20Agile.md)
   
-- JSON
-  - [JSON](https://github.com/yagi4168/TIL/tree/master/JSON)
+- [JSON](https://github.com/yagi4168/TIL/tree/master/JSON)
   
+## codeup 문제풀이
 - codeup
   - [codeup](https://github.com/yagi4168/TIL/tree/master/codeup)
   
+## AI
 - codingyahac
   - [Mechine learning](https://github.com/yagi4168/TIL/tree/master/codingyahac)
   
+## 분류하지 못한것들
 - umm...
   - [Bootstrap](https://github.com/yagi4168/TIL/blob/master/umm.../Bootstrap.md)
   - [MVC Pattern](https://github.com/yagi4168/TIL/blob/master/umm.../MVC%20Pattern.md)
