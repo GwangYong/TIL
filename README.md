@@ -10,3 +10,17 @@
 
 - Development Methodology
   - [Waterfall or Agile](https://github.com/yagi4168/TIL/blob/master/Development%20Methodology/Waterfall%20or%20Agile.md)
+- Django
+  - [Django_Directory](https://github.com/yagi4168/TIL/blob/master/Django/Django_Directory.md)
+  - [MVT Pattern](https://github.com/yagi4168/TIL/blob/master/Django/MVT%20Pattern.md)
+  - [python concept](https://github.com/yagi4168/TIL/blob/master/Django/python%20concept.md)
+  - [ummmmm](https://github.com/yagi4168/TIL/blob/master/Django/ummmmm.md)
+- JSON
+  - [JSON](https://github.com/yagi4168/TIL/tree/master/JSON)
+- codeup
+  - [codeup](https://github.com/yagi4168/TIL/tree/master/codeup)
+- codingyahac
+  - [Mechine learning](https://github.com/yagi4168/TIL/tree/master/codingyahac)
+- umm...
+  - [Bootstrap](https://github.com/yagi4168/TIL/blob/master/umm.../Bootstrap.md)
+  - [MVC Pattern](https://github.com/yagi4168/TIL/blob/master/umm.../MVC%20Pattern.md)
