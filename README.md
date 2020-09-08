@@ -23,6 +23,10 @@
 - codeup
   - [codeup](https://github.com/yagi4168/TIL/tree/master/codeup)
   
+## concept
+- [HTTP](https://github.com/yagi4168/TIL/blob/master/concept/HTTP.md)
+- [Library & Framework](https://github.com/yagi4168/TIL/blob/master/concept/Library%20%26%20Framework.md)
+  
 ## AI
 - codingyahac
   - [Mechine learning](https://github.com/yagi4168/TIL/tree/master/codingyahac)
