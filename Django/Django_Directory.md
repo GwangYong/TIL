@@ -40,3 +40,4 @@ Django_m
     
 ![Django MTV Pattern](https://i.imgur.com/7wc39KX.png)
 
+    

@@ -11,4 +11,3 @@ for j in arr:
     for k in j:
         print(k, end = ' ')
     print()
-
