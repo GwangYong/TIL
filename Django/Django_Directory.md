@@ -40,4 +40,8 @@ Django_m
     
 ![Django MTV Pattern](https://i.imgur.com/7wc39KX.png)
 
+### model
+
+- model이란 데이터베이스에서 '테이블'과 같은 것이다.
+- 즉, 데이터를 가진 하나의 묶음에 대해서 데이터에 대한 형태를 설정해야 한다.
     
