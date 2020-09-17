@@ -12,3 +12,50 @@
 - 함수에서 일정한 처리 후, 메인 페이지로 돌아가려면, 다시 메인 페이지의 url로 돌아가게 해야 하므로, HttpResponseRedirect 함수를 사용한다.
 <br> HttpResponseRedirect 함수를 이용할 때는 우리가 원하는 url에 더 쉽게 매핑해주기 위해 reverse 함수를 이용한다.
     
+    
+### Django_Request and Response
+
+- HttpResponse
+    - ```markdown
+      HttpResponse(data, content_type)
+      ```
+    - response를 반환하는 가장 기본적인 함수
+    - 주로 html을 반환함.
+    - ```markdown
+      # string 전달하기
+      HttpResponse("Here's the text of the web page.")
+    
+      # html 태그 전달하기
+      response = HttpResponse()
+      >>> response.write("<p>Here's the text of web page.</p>")
+      ```
+      
+- HttpRedirect
+    - ```markdown
+      HttpResponseRedirect(url)
+      ```
+    - 별다른 response를 하지는 않고, 지정된 url페이지로 redirect를 함.
+    - 첫번째 인자로 url을 반드시 지정해야 하며, 경로는 절대경로 혹은 상대경로를 이용할 수 있음.
+    
+- Render
+    - ```markdown
+      render(request(필수), template_name(필수),
+            context=None, content_type=None,
+            status=None, using=None)
+      ```
+    - `render`은 `httpResponse` 객체를 반환하는 함수로 template을 context와 엮어 `httpResponse`로 쉽게 반환해주는 함수이다.
+    - template_name에는 불러오고 싶은 템플릿명을 적는다.
+    - context에는 View에서 사용하던 변수(dictionary 자료형)를 html 템플릿에서 전달하는 역할을 한다.
+    - key 값이 템플릿에서 사용할 변수 이름, value 값이 파이썬 변수가 된다.
+    - ```markdown
+      # views.py
+      
+      from django.shortcuts import render
+      
+      def my_view(request):
+          name = "sgo"
+          return render(request, 'app/index.html', {
+              'name': name,
+          }
+      ```
+     
