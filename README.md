@@ -11,22 +11,25 @@
 ## Python
 - Django
   - [Django_Directory](https://github.com/yagi4168/TIL/blob/master/Django/Django_Directory.md)
-  - [MVT Pattern](https://github.com/yagi4168/TIL/blob/master/Django/MVT%20Pattern.md)
+  - [MTV Pattern](https://github.com/yagi4168/TIL/blob/master/Django/MVT%20Pattern.md)
   - [python concept](https://github.com/yagi4168/TIL/blob/master/Django/python%20concept.md)
   - [ummmmm](https://github.com/yagi4168/TIL/blob/master/Django/ummmmm.md)
   - [Django_Study_Alone](https://github.com/yagi4168/TIL/blob/master/Django/Django_Study_Alone.md)
 - Development Methodology
   - [Waterfall or Agile](https://github.com/yagi4168/TIL/blob/master/Development%20Methodology/Waterfall%20or%20Agile.md)
-  
-- [JSON](https://github.com/yagi4168/TIL/tree/master/JSON)
+ 
+## JSON
+  - [JSON](https://github.com/yagi4168/TIL/tree/master/JSON)
+  - [JWT](https://github.com/yagi4168/TIL/blob/master/JSON/JWT.md)
   
 ## codeup 문제풀이
-- codeup
-  - [codeup](https://github.com/yagi4168/TIL/tree/master/codeup)
+- [codeup](https://github.com/yagi4168/TIL/tree/master/codeup)
   
 ## concept
 - [HTTP](https://github.com/yagi4168/TIL/blob/master/concept/HTTP.md)
 - [Library & Framework](https://github.com/yagi4168/TIL/blob/master/concept/Library%20%26%20Framework.md)
+- [API](https://github.com/yagi4168/TIL/blob/master/concept/API.md)
+- [REST API](https://github.com/yagi4168/TIL/blob/master/concept/REST%20API.md)
   
 ## AI
 - codingyahac
