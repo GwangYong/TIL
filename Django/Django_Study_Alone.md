@@ -92,3 +92,11 @@ REST 프레임워크는 `ViewSets`라는 추상 클래스를 제공한다. 이�
 
 `View`클래스 대신 `ViewSet`클래스를 사용하면, URL을 설정할 필요가 없다. <br>
 `Router`클래스를 사용하면 뷰 코드와 뷰, URL이 관례적으로 자동 연결된다. 단지 뷰를 라우터에 적절히 등록해주기만 하면 된다. 그러면 REST 프레임워크가 알아서 다 해준다. 
+
+
+### URLConf
+
+- settings.py에 최상위 URLConf 모듈을 지정
+- 특정 URL과 뷰 매핑 list
+- Django 서버로 HTTP 요청이 들어올 때 마다, URLConf 매핑 List 를 처음부터 끝까지 순차적으로 훑으며 검색.
+- 매칭되는 URL Rule 을 찾지 못했을 경우, 404 Page Not Found 응답을 발생시킴.
