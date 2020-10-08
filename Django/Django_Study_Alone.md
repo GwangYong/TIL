@@ -68,6 +68,7 @@ Serializer는 Django Rest Framework에서 처음 나온 새로운 요소이다.<
 정확한 의미의 직렬화는 Django 프로젝트에서 내가 만든 모델로부터 뽑은 queryset, 즉 모델 인스턴스를 JSON 타입으로 바꾸는 것이다.<br>
 그냥 Django 모델을 JSON으로 변환하기 위한 모양 틀 정도로 이해하면 좋을 것 이다.
 
+<br>
 
 ### migrations & migrate
 
@@ -75,12 +76,14 @@ Serializer는 Django Rest Framework에서 처음 나온 새로운 요소이다.<
 migrations는 테이블을 두어 마이그레이션 적용 여부를 추적하고, migrate를 할 때 문제가 있는지 미리 확인해준다. <br>
 migrate는 데이터베이스 테이블에 적용시켜 주는데, migrate 과정은 model 작성, 수정 시에만 사용된다. 
 
+<br>
 
 ### 가상환경은 왜 쓰이는건가?
 
 프로젝트 별로 사용하는 패키지가 다른데, 사용하지 않는 패키지나 버전이 다른 패키지들을 독립적으로 관리하기 위해 가상환경을 사용한다. <br>
 가상환경을 사용하면 가상환경 끼리는 패키지가 독립적으로 관리되서 필요한 것만 설치하여 사용할 수 있다.
 
+<br>
 
 ### ViewSets & Router
 
@@ -93,6 +96,7 @@ REST 프레임워크는 `ViewSets`라는 추상 클래스를 제공한다. 이�
 `View`클래스 대신 `ViewSet`클래스를 사용하면, URL을 설정할 필요가 없다. <br>
 `Router`클래스를 사용하면 뷰 코드와 뷰, URL이 관례적으로 자동 연결된다. 단지 뷰를 라우터에 적절히 등록해주기만 하면 된다. 그러면 REST 프레임워크가 알아서 다 해준다. 
 
+<br>
 
 ### URLConf
 
@@ -100,3 +104,13 @@ REST 프레임워크는 `ViewSets`라는 추상 클래스를 제공한다. 이�
 - 특정 URL과 뷰 매핑 list
 - Django 서버로 HTTP 요청이 들어올 때 마다, URLConf 매핑 List 를 처음부터 끝까지 순차적으로 훑으며 검색.
 - 매칭되는 URL Rule 을 찾지 못했을 경우, 404 Page Not Found 응답을 발생시킴.
+
+<br>
+
+### QuerySet
+
+- SQL을 생성해주는 인터페이스
+- queryset을 통하여 별도로 SQL을 작성할 필요 없이 DB로 부터 데이터를 가져오고 추가, 수정, 삭제가 가능하다.
+- Modle Manager을 통해 해당 Model에 대한 QuerySet을 획득한다.
+    - Post.objects.all() : "SELECT * FROM post..."와 같은 SQL문 생성
+    - Post.objects.create() : "INSERT INTO post VALUES(...)" 와 같은 SQL문 생성
