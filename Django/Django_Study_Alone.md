@@ -114,3 +114,52 @@ REST 프레임워크는 `ViewSets`라는 추상 클래스를 제공한다. 이�
 - Modle Manager을 통해 해당 Model에 대한 QuerySet을 획득한다.
     - Post.objects.all() : "SELECT * FROM post..."와 같은 SQL문 생성
     - Post.objects.create() : "INSERT INTO post VALUES(...)" 와 같은 SQL문 생성
+
+<br>
+
+### 함수형 뷰 
+
+- 신속한 개발이 가능하지만, 로직이 복잡해진다.
+- `if requeset.method=='GET`과 같은 조건을 달고 로직을 구성.
+```djangourlpath
+# 함수형뷰 예제
+from django.http import HttpResponse
+
+def my_view(request):
+    if request.method == 'GET' :
+        # 로직작성
+        return HttpResponse('result')
+        
+    if request.method == 'POST' :
+    	# 로직작성
+        return HttpResponse('result')
+```
+
+<br>
+
+### 클래스형 뷰
+
+- 상속과 믹스인 기능을 사용하여 코드 재사용이 용이함.
+- 뷰를 체계적으로 구성할 수 있음.
+- **제네릭뷰** 역시 클래스형 뷰 이다.
+- urls.py에 `.as_view()` 메서드와 함께 사용함.
+```djangourlpath
+# 클래스형뷰 예제
+from django.http import HttpResponse
+from django.views import View
+
+class MyView(View):
+    def get(self, request):
+        # 로직작성
+        return HttpResponse('result')
+    
+    def post(self, request):
+        # 로직작성
+        return HttpResponse('result')
+    
+    def head(self, *args, **kwargs):
+        # 로직구현
+        return HttpResponse('')
+```
+
+<br>
