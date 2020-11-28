@@ -6,6 +6,8 @@
 2. 폴더와 파일은 영문으로 작성한다.
 3. 의미없는 커밋 이름은 사용하지 않는다.
 
+<br>
+
 ---
 
 ## Python
@@ -18,13 +20,19 @@
   - [ummmmm](https://github.com/yagi4168/TIL/blob/master/Django/ummmmm.md)
 - Development Methodology
   - [Waterfall or Agile](https://github.com/yagi4168/TIL/blob/master/Development%20Methodology/Waterfall%20or%20Agile.md)
- 
+
+<br>
+
 ## JSON
   - [JSON](https://github.com/yagi4168/TIL/tree/master/JSON)
   - [JWT](https://github.com/yagi4168/TIL/blob/master/JSON/JWT.md)
   
+<br>
+  
 ## codeup 문제풀이
 - [codeup](https://github.com/yagi4168/TIL/tree/master/codeup)
+  
+<br>
   
 ## concept
 - [API](https://github.com/yagi4168/TIL/blob/master/concept/API.md)
@@ -32,6 +40,10 @@
 - [Library & Framework](https://github.com/yagi4168/TIL/blob/master/concept/Library%20%26%20Framework.md)
 - [REST API](https://github.com/yagi4168/TIL/blob/master/concept/REST%20API.md)
   
+<br>
+  
 ## AI
 - codingyahac
   - [Mechine learning](https://github.com/yagi4168/TIL/tree/master/codingyahac)
+
+<br>
