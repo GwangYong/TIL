@@ -11,6 +11,8 @@
 ---
 
 ## Python
+- Development Methodology
+  - [Waterfall or Agile](https://github.com/yagi4168/TIL/blob/master/Development%20Methodology/Waterfall%20or%20Agile.md)
 - Django
   - [Django_Directory](https://github.com/yagi4168/TIL/blob/master/Django/Django_Directory.md)
   - [Django_HTTP](https://github.com/yagi4168/TIL/blob/master/Django/Django_HTTP.md)
@@ -18,8 +20,7 @@
   - [MTV Pattern](https://github.com/yagi4168/TIL/blob/master/Django/MVT%20Pattern.md)
   - [python concept](https://github.com/yagi4168/TIL/blob/master/Django/python%20concept.md)
   - [ummmmm](https://github.com/yagi4168/TIL/blob/master/Django/ummmmm.md)
-- Development Methodology
-  - [Waterfall or Agile](https://github.com/yagi4168/TIL/blob/master/Development%20Methodology/Waterfall%20or%20Agile.md)
+
 
 <br>
 
@@ -34,6 +35,12 @@
   
 <br>
   
+## AI
+- codingyahac
+  - [Mechine learning](https://github.com/yagi4168/TIL/tree/master/codingyahac)
+
+<br>
+  
 ## concept
 - [API](https://github.com/yagi4168/TIL/blob/master/concept/API.md)
 - [HTTP](https://github.com/yagi4168/TIL/blob/master/concept/HTTP.md)
@@ -42,8 +49,5 @@
   
 <br>
   
-## AI
-- codingyahac
-  - [Mechine learning](https://github.com/yagi4168/TIL/tree/master/codingyahac)
-
-<br>
+## 자료구조 & 알고리즘
+- [자료구조](https://github.com/yagi4168/TIL/blob/master/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0%20%26%20%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0.md)
