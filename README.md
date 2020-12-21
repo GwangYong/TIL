@@ -11,6 +11,8 @@
 ---
 
 ## Python
+- Python
+  - [python concept](https://github.com/yagi4168/TIL/blob/master/Django/python%20concept.md)
 - Development Methodology
   - [Waterfall or Agile](https://github.com/yagi4168/TIL/blob/master/Development%20Methodology/Waterfall%20or%20Agile.md)
 - Django
@@ -18,7 +20,6 @@
   - [Django_HTTP](https://github.com/yagi4168/TIL/blob/master/Django/Django_HTTP.md)
   - [Django_Study_Alone](https://github.com/yagi4168/TIL/blob/master/Django/Django_Study_Alone.md)
   - [MTV Pattern](https://github.com/yagi4168/TIL/blob/master/Django/MVT%20Pattern.md)
-  - [python concept](https://github.com/yagi4168/TIL/blob/master/Django/python%20concept.md)
   - [ummmmm](https://github.com/yagi4168/TIL/blob/master/Django/ummmmm.md)
 
 
