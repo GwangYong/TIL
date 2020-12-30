@@ -579,5 +579,139 @@ python,java?
 pickle.dump(객체, 파일) 로 저장
 pickle.load(파일) 로 로딩
 
+<br>
 
-# Pickle 부분 더 정리
+## __init__
+- 파이썬에서 쓰이는 생성자
+- 객체가 만들어질때 자동으로 호출된다. (어떤 클래스로부터 만들어지는 것들을 객체라고 한다.)
+
+<br>
+
+## 상속
+- 클래스에서 상속이란, 물려주는 클래스(Parent, Class, Super class)의 내용(속성과 메소드)을 물려받는 클래스(Child class, sub class)가 가지게 되는 것 이다.
+- 예를 들어 국가라는 클래스가 있고, 그것을 상속받은 한국 일본 미국 등의 클래스를 만들 수 있으며, 국가라는 클래스의 기본적인 속성으로 인구라는 속성을 만들었다면, 상속받은 한국, 일본, 미국 등의 클래스에서 부모 클래스의 속성과 메소드를 사용할 수 있다.
+- 자식클래스를 선언할때 소괄호로 부모클래스를 포함시킨다
+- 그렇게 하면, 자식클래스에서 부모클래스의 속성과 메소드는 기재하지 않아도 포함된다.
+
+<pre>
+class 부모클래스:
+    ...내용...
+    
+class 자식클래스(부모클래스):
+    ...내용...
+</pre>
+
+<br>
+
+```python
+class Country:
+    """Super Class"""
+
+    name = '국가명'
+    population = '인구'
+    capital = '수도'
+
+    def show(self):
+        print('국가 클래스의 메소드입니다.')
+
+
+class Korea(Country):
+    """Sub Class"""
+
+    def __init__(self, name):
+        self.name = name
+
+    def show_name(self):
+        print('국가 이름은 : ', self.name)
+
+```
+
+<br>
+
+**다중상속**
+
+- 말 그대로 상속을 여러개 하는 것 이다.
+
+<pre>
+class 부모 클래스 A:
+    ...내용...
+    
+class 부모 클래스 B:
+    ...내용...
+    
+class 자식 클래스 C(부모 클래스 A, 부모 클래스 B):
+    ...내용...
+</pre>
+
+<br>
+
+```python
+class Person:
+    def greeting(self):
+        print('안녕하세요.')
+ 
+class University:
+    def manage_credit(self):
+        print('학점 관리')
+ 
+class Undergraduate(Person, University):
+    def study(self):
+        print('공부하기')
+ 
+james = Undergraduate()
+james.greeting()         # 안녕하세요.: 기반 클래스 Person의 메서드 호출
+james.manage_credit()    # 학점 관리: 기반 클래스 University의 메서드 호출
+james.study()            # 공부하기: 파생 클래스 Undergraduate에 추가한 study 메서드
+
+# 실행 결과 
+
+# 안녕하세요.
+# 학점 관리
+# 공부하기
+```
+
+<br>
+
+## 메소드 오버라이딩
+- 상속 관계에서 동일한 메소드가 있을 때 특정 메소드를 무시하고, 다른 클래스의 메소드를 사용하는 방식이다.
+- 오버라이딩은 기존에 이미 만들어진 메소드의 이름을 똑같이 만들어야 할 때 사용된다.
+- 예를 들어 부모 클래스에 over 라는 메소드가 있는데, 자식 클래스에도 over 라는 메소드가 필요할때 사용하게 되면 자식 클래스의 over 메소드가 호출된다
+
+```python
+class parent_class:
+    def over(self):
+        print("부모 클래스의 over 메소드")
+
+class child_class:
+    def over(self):
+        print("자식 클래스의 over 메소드")
+
+test = child_class()
+test.over()
+
+# 결과값 : 자식 클래스의 over 메소드
+```
+이렇게 동일한 이름의 메소드를 삽입했을 때 특정 클래스의 메소드가 무시되는걸 오버라이딩 이라고 한다.
+
+<br>
+
+만약, 필요에 의해 오버라이딩한 자식 클래스의 over 메소드를 삽입했으나, 부모 클래스의 over 메소드도 같이 필요하다면 super()를 이용하면 된다.
+```python
+class parent_class:
+    def over(self):
+        print("부모 클래스의 over 메소드")
+
+class child_class:
+    def over(self):
+        super().over()
+        print("자식 클래스의 over 메소드")
+
+test = child_class()
+test.over()
+
+# 결과값 : 부모 클래스의 over 메소드
+# 결과값 : 자식 클래스의 over 메소드
+```
+이렇게 super()를 이용할 경우, 부모 클래스의 지정한 메소드를 호출하며 오버라이딩된 상황에서 특정 메소드를 중복하여 출력하거나 값이 필요한 경우 사용될 수 있다.
+
+<br>
