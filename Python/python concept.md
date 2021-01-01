@@ -734,3 +734,24 @@ finally:
 </pre>
 
 <br>
+
+## random 함수
+- 말 그대로 랜덤(random) 모듈을 사용한다.
+- 무작위 난수(random number)가 나오게 된다.
+
+<pre>
+# 0.0이상 1.0 미만의 실수(float)를 리턴(반환)한다.
+>>> random.random()
+
+# 1.0이상 2.0 미만의 실수(float)를 반환(리턴)한다.
+>>> random.random() + 1.0
+
+# 0이상 10미만 2의 배수를 반환(리턴)한다.
+>>> random.randrange(0, 10, 2)
+ex) 2, 4, 6, 8
+
+# 1이상 7미만의 난수를 출력하는 방법
+>>> random.randrange(1,7)
+6
+</pre>
+
