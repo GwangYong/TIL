@@ -122,4 +122,3 @@ nameOfIntegers = [:]
 ```swift
 var airport: [String: String] = ["YYZ": "Toronto Pearson", "DUB": "Dublin"]
 ```
-
