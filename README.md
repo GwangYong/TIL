@@ -2,13 +2,11 @@
 
 ## TIL은 당일날 스스로 이해한 것을 바탕으로 정리한 것을 정리하는 공간입니다.
 
----
 작성한 내용들은 [개인블로그](https://velog.io/@dumn423) 에 포스트할 예정입니다.
 
 <br>
 
 ## 분류
----
 
 ### iOS
 - Swift_language
@@ -40,7 +38,7 @@
 
 ### Python
 - [파이썬 문법 정리](https://github.com/GwangYong/TIL/blob/master/Python/python_language.md)
-- [codeup 문제풀이]()
+- [codeup 문제풀이](https://github.com/GwangYong/TIL/tree/master/Python/codeup)
 
 ### ETC
 - [라이브러리 & 프레임워크](https://github.com/GwangYong/TIL/blob/master/ETC/Library%20%26%20Framework%20%26%20etc...md)
