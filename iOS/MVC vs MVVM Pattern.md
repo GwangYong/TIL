@@ -1,7 +1,8 @@
 # MVC Pattern 이란?
 
+> MVC 패턴은 Model + View + Controller를 합친 용어이다.
+
 ![MVC Pattern](https://media.vlpt.us/images/sso0022/post/965b0cae-8f16-4d1f-994a-8603c1ab48fe/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202021-03-21%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2010.26.24.png)
-MVC 패턴은 Model + View + Controller를 합친 용어이다.
 
 <br>
 
@@ -22,8 +23,9 @@ MVC 모델은 View와 Model 사이의 의존성이 높아, 유지보수가 어�
 <br><br>
 
 # MVVM Pattern 이란?
+> MVVM 패턴은 Model + View + View Model을 합친 용어이다.
+
 ![MVVM Pattern](https://t1.daumcdn.net/thumb/R720x0.fpng/?fname=http://t1.daumcdn.net/brunch/service/user/aUYX/image/ykBFfLMPB4Gd0fa0G93N3f39uwM.png)
-MVVM 패턴은 Model + View + View Model을 합친 용어이다.
 
 <br>
 
