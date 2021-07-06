@@ -16,6 +16,7 @@
     - [옵셔널(Optional)](https://github.com/GwangYong/TIL/blob/master/iOS/Swift_language/Optional.md)
 
 - [MVC vs MVVM Pattern](https://github.com/GwangYong/TIL/blob/master/iOS/MVC%20vs%20MVVM%20Pattern.md)
+- [코코아 프레임워크(Cocoa Framework)](https://github.com/Gwangyong/TIL/blob/master/iOS/What%20is%20Cocoa%20Framework%3F.md)
 
 
 ### AI
