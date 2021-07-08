@@ -17,8 +17,7 @@
 
 - [MVC vs MVVM Pattern](https://github.com/GwangYong/TIL/blob/master/iOS/MVC%20vs%20MVVM%20Pattern.md)
 - [코코아 프레임워크(Cocoa Framework)](https://github.com/Gwangyong/TIL/blob/master/iOS/What%20is%20Cocoa%20Framework%3F.md)
-- [객체지향 프로그래밍(OOP](https://github.com/Gwangyong/TIL/blob/master/iOS/%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP).md
-
+- [객체지향 프로그래밍(OOP)](https://github.com/Gwangyong/TIL/blob/master/iOS/%EA%B0%9D%EC%B2%B4%20%EC%A7%80%ED%96%A5%20%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D(OOP).md)
 
 ### AI
 - [딥러닝 객체 검출 용어 정리](https://github.com/GwangYong/TIL/blob/master/AI/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EA%B0%9D%EC%B2%B4%20%EA%B2%80%EC%B6%9C%20%EC%9A%A9%EC%96%B4%20%EC%A0%95%EB%A6%AC.md)
