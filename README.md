@@ -44,3 +44,4 @@
 
 ### ETC
 - [라이브러리 & 프레임워크](https://github.com/GwangYong/TIL/blob/master/ETC/Library%20%26%20Framework%20%26%20etc...md)
+- [동기식 & 비동기식 개념 비교](https://github.com/Gwangyong/TIL/blob/master/ETC/%EB%8F%99%EA%B8%B0%EC%8B%9D%20%EC%B2%98%EB%A6%AC%20%EB%AA%A8%EB%8D%B8%20%26%20%EB%B9%84%EB%8F%99%EA%B8%B0%EC%8B%9D%20%EC%B2%98%EB%A6%AC%20%EB%AA%A8%EB%8D%B8.md)
