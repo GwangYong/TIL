@@ -14,8 +14,8 @@
 <br>
 
 ## MVC 패턴 동작
-1. 사용자의 Action은 Controller에 들어오게 된다.
-2. Controller는 들어온 Action을 확인한 후, Model 데이터를 업데이트한다.
+1. 사용자의 Action은 View를 통해 Controller에 들어오게 된다.
+2. Controller는 View를 통해 들어온 Action을 확인한 후, Model 데이터를 업데이트한다.
 3. Controller는 Model을 나타내줄 View를 선택한다.
 4. View는 Model을 이용하여 사용자의 화면에 나타내준다.
 
