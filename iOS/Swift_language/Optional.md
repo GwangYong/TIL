@@ -41,10 +41,10 @@ String 타입의 뒤에 `"?"`을 붙여주니 오류가 사라졌네요! 이유�
 
 <br>
 
-## ! (Unwrapping) 
+## ! (Forced Unwrapping) 
 
 자 이제 `?`는 optional의 기호라는건 다들 아실겁니다. 하지만 위에서 말했듯이 !를 써도 오류가 사라지는데요. !은 무엇일까요??<br>
-!는 강제 언래핑(Unwrapping)이라고 부릅니다. ?와 다르게 친절하게 물어보는 느낌이 아닌, 값이 있든 말든 다 무시하고 강제로(?) 값을 가져온다고 생각하시면 될거같네요
+!는 강제 언래핑(Forced Unwrapping)이라고 부릅니다. ?와 다르게 친절하게 물어보는 느낌이 아닌, 값이 있든 말든 다 무시하고 강제로(?) 값을 가져온다고 생각하시면 될거같네요
 
 이번에도 코드로 보면서 설명해봅시다.
 ```swift
@@ -60,9 +60,9 @@ print(num!)             // 300
 우리가 코드를 작성할때 일반적으로 원하는 값은 `Optional(300)`이 아닌, 그냥 `300`일겁니다.
 
 이럴때 원하는 값인 `300`만 출력하도록 하기 위해 사용하는 것이 `!(exclamation mark)`입니다.<br>
-변수명 뒤에 느낌표를 사용해서 optional을 unwrap해주는 것 입니다. optional은 unwrap를 한 상태에서만 위와 같이 제대로된 값만을 출력할 수 있습니다.
+변수명 뒤에 느낌표를 사용해서 optional을 Forced unwrap해주는 것 입니다. optional은 Forced unwrap를 한 상태에서만 위와 같이 제대로된 값만을 출력할 수 있습니다.
 
 즉, 우리가 optional로 `있을 수도 있고, 없을 수도 있다.` 라고 선언했지만, 
 `무조건` 변수에 값이 있는게 보장된 경우, `!`를 쓰면 우리가 원하는 값 만을 출력할 수 있게됩니다.
 
-> 참고 자료 : https://medium.com/@codenamehong/swift-optional-1-54ae4d37ee09
+<!-- > 참고 자료 : https://medium.com/@codenamehong/swift-optional-1-54ae4d37ee09 -->
