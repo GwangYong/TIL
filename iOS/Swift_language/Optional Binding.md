@@ -2,7 +2,7 @@
 
 Optional Binding은 Optional 타입으로 선언된 변수에 값이 있는지 없는지를 확인할 수 있도록 도와주는 기능이다.
 
-Optional Binding은 optional의 값이 존재하는지 검사한 뒤, 값이 존재한다면 **"!(느낌표)" 없이** Optional 타입의 변수 값을 출력할 수 있어서, 좀 더 안전한 형태로 값을 얻을 수 있다.
+`Optional Binding`은 optional의 값이 존재하는지 검사한 뒤, 값이 존재한다면 **"!(느낌표)" 없이** Optional 타입의 변수 값을 출력할 수 있어서, 좀 더 안전한 형태로 값을 얻을 수 있다.
 
 `if let` 또는 `if var` 를 사용하는데, 옵셔널 값이 있다면 `if`문 안으로 들어가고, 값이 `nil` 이라면 그냥 통과 하게 된다.
 
@@ -60,16 +60,15 @@ if let name = optionalName,
 
 optional chaining은 이름에서 보이듯 체인처럼 이어진다는 느낌이다.
 
-옵셔널 체이닝(Optional Chaining)은 하위의 property에 optional 값이 있는지 없는지 연속적으로 확인하면서, 중간에 하나라도 nil이 발견되면 그 즉시 nil이 반환되는 형식이다.
-
+`옵셔널 체이닝(Optional Chaining)`은 하위의 property에 optional 값이 있는지 없는지 연속적으로 확인하면서, **중간에 하나라도 nil이 발견되면 그 즉시 nil이 반환**되는 형식이다.
 
 또한, 옵셔널 체이닝의 속성은 일반적인 `Int`는 옵셔널 체이닝으로 접근할 때 `Int?`로 반환된다.
 
-아래 코드를 보면서 이해하자.
+<br>
 
-예제 코드는 [스위프트 언어가이드 - Optional Chaining](https://docs.swift.org/swift-book/LanguageGuide/OptionalChaining.html) 에 나와있는 예제이다.
+예제 예제 코드는 [스위프트 언어가이드 - Optional Chaining](https://docs.swift.org/swift-book/LanguageGuide/OptionalChaining.html) 에 나와있는 예제이다.
 
-처음으로, Person과 Residence라는 두 개의 클래스가 정의된다.
+처음으로, `Person`과 `Residence`라는 두 개의 클래스가 정의된다.
 ```swift
 class Person {
     var residence: Residence?
@@ -82,20 +81,22 @@ class Residence {
 // Residence 인스턴스는 기본 값 1을 가지는 numberOfRooms라는 Int형 속성을 하나 가지게 된다.
 ```
 
-아래에서 Person타입의 인스턴스가 만들어지면, residence 변수의 초기값은 nil 값이 될 것이다.
+<br>
+
+아래에서 `Person`타입의 인스턴스가 만들어지면, `residence` 변수의 초기값은 `nil` 값이 될 것이다.
 
 ```swift
 let Jud = Person()
 ```
 
-만약, 아래의 코드처럼 residence 뒤에 강제로 느낌표(!)를 표시하여 값을 강제로 언래핑하려고 하면 **언래핑할 값이 없기 때문에 런타임 에러가 발생**한다.
+만약, 아래의 코드처럼 `residence` 뒤에 강제로 느낌표(!)를 표시하여 값을 강제로 언래핑하려고 하면 **언래핑할 값이 없기 때문에 런타임 에러가 발생**한다.
 
 ```swift
 let roomCount = john.residence!.numberOfRooms
 // 런타임 에러
 ```
 
-
+<br>
 
 ```swift
 let roomCount = Jud.residence?.numberOfRooms {
@@ -111,9 +112,9 @@ let roomCount = Jud.residence?.numberOfRooms {
 let roomCount = Jud.residence?.numberOfRooms
 ```
 바로 이 부분에 옵셔널 체이닝 방법을 적용한 것이다.<br>
-property를 통해 체인처럼 이어져있는데, Jud의 residence가 nil이 아니라면 numberOfRooms를 확인하여 roomCount에 방 번호가 포함되어 저장된다.
+`property`를 통해 체인처럼 이어져있는데, `Jud`의 `residence`가 `nil`이 아니라면 `numberOfRooms`를 확인하여 `roomCount`에 방 번호가 포함되어 저장된다.
 
-또한 이 부분에서 residence 뒤에 ?가 붙어있는데, 그 이유로는 **residence가 nil을 반환할 수도 있고, 아닐 수도 있기 때문**이다.
+또한 이 부분에서 `residence` 뒤에 ?가 붙어있는데, 그 이유로는 **residence가 nil을 반환할 수도 있고, 아닐 수도 있기 때문**이다.
 
 <br>
 
