@@ -42,7 +42,11 @@ copy-in copy-out 동작 방식은 아래와 같다.
 
 copy-in copy-out은 안으로 복사되고, 다시 바깥으로 복사된다는 뜻이다.
 
+<br>
 
+> 참고 자료
+> - [Swift 언어 가이드 - Functions](https://docs.swift.org/swift-book/LanguageGuide/Functions.html)
+> - [Swift 문법, in-out 매개변수 특징 및 사용방법](https://0urtrees.tistory.com/128)
 
 <!-- (설명 이미지도 코드짜서 많이 넣고, 블로그에 올릴 수 있도록 h태그를 여러개 넣어주고 질문형으로 만들고 알려주듯이 노력하자.) -->
 
