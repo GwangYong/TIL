@@ -49,3 +49,4 @@
 - [라이브러리 & 프레임워크](https://github.com/GwangYong/TIL/blob/master/ETC/Library%20%26%20Framework%20%26%20etc...md)
 - [동기식 & 비동기식 개념 비교](https://github.com/Gwangyong/TIL/blob/master/ETC/%EB%8F%99%EA%B8%B0%EC%8B%9D%20%EC%B2%98%EB%A6%AC%20%EB%AA%A8%EB%8D%B8%20%26%20%EB%B9%84%EB%8F%99%EA%B8%B0%EC%8B%9D%20%EC%B2%98%EB%A6%AC%20%EB%AA%A8%EB%8D%B8.md)
 - [전달인자(Argument) & 매개변수(Parameter)](https://github.com/Gwangyong/TIL/blob/master/ETC/%EC%A0%84%EB%8B%AC%EC%9D%B8%EC%9E%90(Argument)%EC%99%80%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98(Parameter).md)
+- [디버그란?(What is Debug?)](https://github.com/Gwangyong/TIL/blob/master/ETC/%EB%94%94%EB%B2%84%EA%B7%B8%EB%9E%80%3F.md)
