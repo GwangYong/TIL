@@ -17,6 +17,7 @@
     - [옵셔널 바인딩(Optional Binding)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/Optional%20Binding.md)
     - [정렬(sort and sorted)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/%EC%A0%95%EB%A0%AC(sort%20and%20sorted).md)
     - [인-아웃(in-out parameter)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/inout%20Parameter.md)
+    - [이니셜라이저(Initializer)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/Initializer.md)
 
 - [MVC vs MVVM Pattern](https://github.com/GwangYong/TIL/blob/master/iOS/MVC%20vs%20MVVM%20Pattern.md)
 - [코코아 프레임워크(Cocoa Framework)](https://github.com/Gwangyong/TIL/blob/master/iOS/What%20is%20Cocoa%20Framework%3F.md)
