@@ -100,12 +100,15 @@ let roomCount = Jud.residence!.numberOfRooms
 ```
 위의 코드를 보면, 밑에 주석부분과 같이 오류가 생성된다.
 
-그 이유는 위에서 설명한대로 Jud에서의 residence속성 값이 nil인데, '!'를 사용하여 주었기 때문이다.
+그 이유는 위에서 설명한대로 Jud에서의 residence속성 값이 nil인데, `!`를 사용하여 주었기 때문이다.
 
 <br>
 
 아래의 코드도 Jud.residence의 값이 nil이기 때문에, else문으로 넘어가서 아래의 코드가 실행된다.
-하지만 위와는 다르게 '!'가 아닌, '?'를 사용했기 때문에, 오류는 생성되지 않는다.
+하지만 위와는 다르게 `!`가 아닌, `?`를 사용했기 때문에, 오류는 생성되지 않는다.
+
+<br>
+
 ```swift
 let roomCount = Jud.residence?.numberOfRooms {
     print("Jud's residence has \(roomCount) room(s).")
@@ -119,7 +122,9 @@ let roomCount = Jud.residence?.numberOfRooms {
 ```swift
 let roomCount = Jud.residence?.numberOfRooms
 ```
-바로 이 부분에 옵셔널 체이닝 방법을 적용한 것이다.<br>
+
+바로 이 부분에 옵셔널 체이닝 방법을 적용한 것이다.
+
 `property`를 통해 체인처럼 이어져있는데, `Jud`의 `residence`가 `nil`이 아니라면 `numberOfRooms`를 확인하여 `roomCount`에 방 번호가 포함되어 저장된다.
 
 <br>
@@ -130,7 +135,9 @@ Jud.residence = Residence()
 ```
 라는 코드를 추가하면 된다.
 
-다시 한번 강조하지만, !를 사용하는 강제 언래핑(Froced Unwrapping)는 가능하면 사용하지 않는것이 좋다.
+<br>
+
+Optional에서 설명했지만, 다시 한번 강조하자면 `!`를 사용하는 `강제 언래핑(Froced Unwrapping)`은 가능하면 사용하지 않는것이 좋다.
 
 위의 이유와 !(강제 언래핑)을 언제 사용하는지가 궁금하다면, Optional에 대해 정리한걸 먼저 보고오는게 좋을 것이다.
 
