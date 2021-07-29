@@ -1,3 +1,5 @@
+[이 내용을 정리한 개인 기술 블로그](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-Optional%EC%9D%B4%EB%9E%80-%F0%9F%A4%94)
+
 ## Optional이란??
 
 swift언어는 type-safety한 언어입니다. optional은 그 중요한 요소 중 하나이죠. <br>

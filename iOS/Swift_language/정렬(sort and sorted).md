@@ -1,3 +1,5 @@
+[이 내용을 정리한 개인 기술 블로그](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-%EC%A0%95%EB%A0%AC-sort%EC%99%80-sorted)
+
 # sort
 
 `sort`는 기본적으로 **"원본 배열"** 을 가지고 **오름차순**으로 정렬한다.<br>
