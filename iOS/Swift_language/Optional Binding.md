@@ -83,6 +83,7 @@ class Residence {
 
 <br>
 아래의 코드에서 Person 타입의 인스턴스를 Jud로 생성해 주었다.
+
 ```swift
 let Jud = Person()
 ```
