@@ -50,6 +50,7 @@
 
 ### Data Structure
 - [스택(Stack), 큐(Queue)](https://github.com/Gwangyong/TIL/blob/master/Data%20structure/%EC%8A%A4%ED%83%9D(Stack)%2C%20%ED%81%90(Queue).md)
+- [연결 리스트(Linked List)](https://github.com/Gwangyong/TIL/blob/master/Data%20structure/%EC%97%B0%EA%B2%B0%20%EB%A6%AC%EC%8A%A4%ED%8A%B8(Linked%20list).md)
 
 ### ETC
 - [라이브러리 & 프레임워크](https://github.com/GwangYong/TIL/blob/master/ETC/Library%20%26%20Framework%20%26%20etc...md)
