@@ -49,7 +49,7 @@ func printName() {
 
 또한, else 내부 코드에는 `return, break, continue, throw` 등의 `제어문 전환 명령어` 사용해야 한다.
 
-if let 구문과는 다르게 guard 구문은 항상 `else` 구문이 뒤에 따라와야 한다.
+if let 구문과는 다르게 guard 구문은 항상 `else` 구문이 뒤에 따라와야 하며, guard문은 **함수 전체에서 추출된 `상수`나 `함수`를 사용 가능하다.**
 
 ```swift
 func printName() {
@@ -77,6 +77,7 @@ func printName() {
 - if let 구문과 다르게, else문을 생략할 수 없다.
 - guard는  return, break, continue, throw 등의 `제어문 전환 명령어`를 반드시 넣어주어야 한다.
 - 요구사항만을 반영해서 예외처리를 하려면 guard let을 사용하는 것이 더욱 간결한 코드가 될 것이다.
+- guard문은 함수 전체에서 optional로 추출된 상수나 함수를 사용할 수 있다.
 
 
 
