@@ -1,5 +1,7 @@
 ## 배열 (Array)
 
+데이터 타입의 값들을 순서대로 저장하는 리스트.
+
 ### 배열의 축약형 문법
 ```swift
 var someInts = [Int]()
@@ -63,6 +65,8 @@ shoppingList[0..2]
 
 ## 셋 (Set)
 
+같은 데이터 타입의 값을 순서없이 저장하는 리스트
+
 ### 빈 Set 생성
 
 ```swift
@@ -105,7 +109,9 @@ oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
 
 ## 사전 (Dictionaries)
 
-> Dictionary는 [Key: Value] 형태로 사용할 수 있다.
+순서없기 키(Key)와 값(Value) 한 쌍으로 데이터를 저장하는 컬렉션 타입.
+
+[Key : Value]형태
 
 ```swift
 var namesOfIntegers = [Int: String]()
