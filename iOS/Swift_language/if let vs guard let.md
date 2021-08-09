@@ -27,7 +27,7 @@ func printName() {
 
 <br>
 
-아래와 같이 name에 nil을 넣게 되면, "Jud"가 실행되지 않고, else 구문으로 넘어가서 "nil"이 출력된다.
+아래와 같이 name에 nil을 넣게 되면, if let 구문의 안에 있는 print(myName)이 실행되지 않고, else 구문으로 넘어가서 "nil"이 출력된다.
 ```swift
 func printName() {
     var name: String?
