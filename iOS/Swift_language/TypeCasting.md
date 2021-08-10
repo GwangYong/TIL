@@ -6,7 +6,7 @@
 
 <br>
 
-## 타입 확인(Checking Type)
+# 타입 확인(Checking Type)
 타입 확인은 "is" 키워드를 사용해서 특정 클래스의 인스턴스의 타입을 확인할 수 있다.
 
 Swift Language Guide에 있는 예제를 살펴보자.
@@ -38,6 +38,8 @@ class Song: MediaItem {
     }
 }
 ```
+<br>
+
 `MediaItem` 클래스를 상속받는 서브 클래스인 `Movie`와 `Song` 두 개의 클래스를 선언해준다.
 
 
@@ -79,19 +81,15 @@ print("Media library에는 \(movieCount)개의 영화와 \(songCount)개의 노�
 
 <br>
 
+# 다운캐스팅(Downcasting)
 
-## 다운캐스팅(Downcasting)
+다운 캐스팅은 `부모 클래스`에서 `자식 클래스`로 `형 변환` 하는것을 의미한다. 쉽게 말하자면 **업캐스팅된 인스턴스를 다시 원래의 서브 클래스 타입으로 참조하고자 할때 사용한다.**
 
-다운 캐스팅은 `부모 클래스`에서 `자식 클래스`로 `형 변환` 하는것을 의미한다. 쉽게 말하자면 자식 클래스의 프로퍼티와 메소드를 사용하기 위해서 다운캐스팅을 하는 것이다.
-
-특정 클래스 타입의 상수나 변수는 하위 클래스의 인스턴스를 참조하고 있을 수 있다. 이런 경우에 "as?"와 "as!"를 사용하여 서브 클래스 타입으로 "다운캐스팅"을 진행할 수 있다.
-
-다운캐스팅은 실패할 수 있기 때문에, 형 변환 연산자는 두 개의 형식으로 나뉘어진다.
+다운캐스팅은 **실패할 수 있기 때문에, "as?"와 "as!" 연산자를 이용한다.**
 
 Optional 조건부 형식 `as?`는 다운캐스트를 시도하여 타입의 옵셔널 값을 반환하며, 강제 형식인 `as!`를 사용하면 강제 언래핑(Forced-Unwrap)을 하여 강제로 값을 반환하게 된다.
 
-Optional Binding에서 `!`를 사용하면 값이 없는 경우에도 값을 가져오려다가 런타임 에러가 발생하므로, 가능하면 사용하지 말고 값이 확실히 있을때만 사용하라고 주의했었다. 
-그러므로 다운캐스팅도 마찬가지로 확실히 성공한다는 확신이 있을때만 `!`를 사용하자.
+Optional Binding에서 `!`를 사용하면 값이 없는 경우에도 값을 가져오려다가 런타임 에러가 발생하므로, 가능하면 사용하지 말고 값이 확실히 있을때만 사용하라고 주의했었다. 그러므로 다운캐스팅도 마찬가지로 **확실히 성공한다는 확신이 있을때만 `!`를 사용하자.**
 
 <br>
 
@@ -116,21 +114,72 @@ for item in library {
 `library`는 `MediaItem`타입 배열이며, `as?` 조건부 형식 뒤에 있는 `Movie`와 `Song` 모두 `MediaItem`의 서브클래스이기 때문에, 차례대로 Movie와 Song의 이름과 감독/아티스트 이름을 출력하게 된다.
 
 
+<br>
 
 
+# Any, AnyObject
+
+Swift는 두 가지 특별한 타입을 제공한다. 바로 `Any`와 `AnyObject`이다.
+
+- `Any`는 함수 타입을 포함해 `모든 타입의 인스턴스`를 나타낸다.
+- `AnyObject`는 `모든 클래스 타입`의 인스턴스를 나타낸다.
+
+
+`things`라는 `Any`타입의 배열을 선언하여 아래와 같이 여러 타입의 값을 저장한다. `Int`, `String`, 함수, 클로저 등 여러가지 타입이 가능하다.
+```swift
+var things: [Any] = []
+
+things.append(0)
+things.append(0.0)
+things.append("Jud")
+things.append({ (name: String) -> String in "Hello, \(name)" })
+things.append(Movie(name: "Black Widow", director: "Cate Shortland"))
+```
 
 <br>
 
+하지만 아래의 코드와 같이 `Any` 타입에서 `AnyObject`타입으로 변경해주면 **클래스 타입인 Movie를 제외하고는 모두 에러가 뜬다.**
+```swift
+var things: [AnyObject] = []
+
+things.append(0)
+things.append(0.0)
+things.append("Jud")
+things.append({ (name: String) -> String in "Hello, \(name)" })
+things.append(Movie(name: "Black Widow", director: "Cate Shortland"))
+```
+
+그 이유로는 `AnyObject`는 위에서 설명했듯이, 모든 `클래스 타입`의 인스턴스만을 저장할 수 있다. 따라서 위의 코드와 같은 경우, **클래스 타입이 아니기 때문에** 오류가 나는 것이다.
+
+<br>
+
+이번에는 `things`를 반복하며, `switch`문에 `as` 연산자를 활용해서 해당 타입일 경우에 적절한 값을 출력하도록 해보자.
+```swift
+for thing in things {
+    switch thing {
+    case _ as Int:
+        print("Int Type")
+    case _ as Double:
+        print("Double Type")
+    case _ as String:
+        print("String Type")
+    case _ as (String) -> String:
+        print(("Jud"))
+    case let movie as Movie:
+        print("a movie name \(movie.name), dir. \(movie.director)")
+    default:
+        print("somthing else")
+    }
+}
+```
+
+`tip!` 파라미터 이름을 `_` 로 정의하면 함수를 호출할 때 파라미터 이름을 생략할 수 있다.
+
+
+
 <!-- 
-
-더 정리해서 TIL 마무리하고, 블로그 포스팅으로 준비
-
-************가능하면 밑에 Reference에 적어둔 스위프트 가이드만 보고 정리하자. 참고한곳 늘리고싶지않아...************************
-
-- 다운 캐스팅 개념 간단하게 설명
-- Any와 AnyObject 정리하기
-
 
 > Reference
 > - [The Swift Language Guide - Type Casting](https://docs.swift.org/swift-book/LanguageGuide/TypeCasting.html)
+
  -->
