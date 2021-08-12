@@ -21,6 +21,7 @@
     - [if let vs guard let](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/if%20let%20vs%20guard%20let.md)
     - [Type Casting & Any, AnyObject](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/Type%20Casting%20%26%20Any%2C%20AnyObject.md)
     - [Closure](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/Closure.md)
+    - [고차함수(map, filter, reduce)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/map%2C%20filter%2C%20reduce.md)
 
 - [MVC vs MVVM Pattern](https://github.com/GwangYong/TIL/blob/master/iOS/MVC%20vs%20MVVM%20Pattern.md)
 - [코코아 프레임워크(Cocoa Framework)](https://github.com/Gwangyong/TIL/blob/master/iOS/What%20is%20Cocoa%20Framework%3F.md)
