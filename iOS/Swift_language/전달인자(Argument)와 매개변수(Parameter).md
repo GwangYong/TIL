@@ -1,4 +1,4 @@
-<!-- 계속 전달인자와 매개변수 두 가지의 이름을 들으면 무엇인지도 모르고, 햇갈리기도 했어서 정리해본다. -->
+[이 내용을 정리한 개인 기술 블로그](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-%EC%A0%84%EB%8B%AC%EC%9D%B8%EC%9E%90Argument%EC%99%80-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98Parameter)
 
 아래의 명령어를 예시로 해서, 전달인자(Argument)와 매개변수(Parameter)를 설명하겠다.
 ```swift

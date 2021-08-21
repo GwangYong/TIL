@@ -1,3 +1,5 @@
+[이 내용을 정리한 개인 기술 블로그](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-if-let-%EA%B3%BC-guard-let%EC%9D%98-%EC%B0%A8%EC%9D%B4%EB%8A%94?category=1010119)
+
 guard let과 if let은 공통적으로 `옵셔널 바인딩` 이라는 특징을 가지고있다.
 
 우리는 변수에 값이 있을지 없을지 모르는 상황에서 optional을 사용하지만, 그 값을 가져오려면 optional binding을 사용하여 값을 unwrap해와야 한다. 

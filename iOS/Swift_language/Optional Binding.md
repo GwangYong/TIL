@@ -1,3 +1,5 @@
+[이 내용을 정리한 개인 기술 블로그](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-Optional-Binding%EC%9D%B4%EB%9E%80-%F0%9F%A7%90?category=1010119)
+
 # 옵셔널 바인딩(Optional Binding)이란?
 
 Optional Binding은 Optional 타입으로 선언된 변수에 값이 있는지 없는지를 확인할 수 있도록 도와주는 기능이다.
