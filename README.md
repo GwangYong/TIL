@@ -51,6 +51,9 @@
 - [파이썬 문법 정리](https://github.com/GwangYong/TIL/blob/master/Python/python_language.md)
 - [codeup 문제풀이](https://github.com/GwangYong/TIL/tree/master/Python/codeup)
 
+### Git
+- [.gitignore 파일이란?](https://github.com/Gwangyong/TIL/blob/master/Git/.gitignore%20%ED%8C%8C%EC%9D%BC%EC%9D%B4%EB%9E%80%3F.md)
+
 ### Data Structure
 - [스택(Stack), 큐(Queue)](https://github.com/Gwangyong/TIL/blob/master/Data%20structure/%EC%8A%A4%ED%83%9D(Stack)%2C%20%ED%81%90(Queue).md)
 - [연결 리스트(Linked List)](https://github.com/Gwangyong/TIL/blob/master/Data%20structure/%EC%97%B0%EA%B2%B0%20%EB%A6%AC%EC%8A%A4%ED%8A%B8(Linked%20list).md)
@@ -61,4 +64,3 @@
 - [동기식 & 비동기식 개념 비교](https://github.com/Gwangyong/TIL/blob/master/ETC/%EB%8F%99%EA%B8%B0%EC%8B%9D%20%EC%B2%98%EB%A6%AC%20%EB%AA%A8%EB%8D%B8%20%26%20%EB%B9%84%EB%8F%99%EA%B8%B0%EC%8B%9D%20%EC%B2%98%EB%A6%AC%20%EB%AA%A8%EB%8D%B8.md)
 - [전달인자(Argument) & 매개변수(Parameter)](https://github.com/Gwangyong/TIL/blob/master/ETC/%EC%A0%84%EB%8B%AC%EC%9D%B8%EC%9E%90(Argument)%EC%99%80%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98(Parameter).md)
 - [디버그란?(What is Debug?)](https://github.com/Gwangyong/TIL/blob/master/ETC/%EB%94%94%EB%B2%84%EA%B7%B8%EB%9E%80%3F.md)
-- [.gitignore 파일이란?](https://github.com/Gwangyong/TIL/blob/master/ETC/.gitignore%20%ED%8C%8C%EC%9D%BC%EC%9D%B4%EB%9E%80%3F.md)
