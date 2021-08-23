@@ -18,17 +18,18 @@ in-out 매개변수는 copy-in copy-out이라는 동작 방식으로 전달된�
 
 in-out parameter 예시
 ```swift
-func swapTwoInts(_ a: inout Int, _ b: inout Int) { // a = 3, b = 107
-    let temporaryA = a  // temporaryA = 3
-    a = b               // a = 107
-    b = temporaryA      // b = 3
+func swapTwoInts(_ a: inout Int, _ b: inout Int) { // a = 2, b = 16
+	let temporaryA = a // temporaryA = 2
+	a = b // a = b(16)
+	b = temporaryA // b = a(2)
 }
 
-var someInt = 3
-var anotherInt = 107
-swapTwoInts(&someInt, &anotherInt)
-print("someInt is now \(someInt), and anotherInt is now \(anotherInt)")
-// Prints "someInt is now 107, and anotherInt is now 3"
+var firstInt = 2
+var secondInt = 16
+swapTwoInts(&firstInt, &secondInt)
+print("firstInt is \(firstInt) and secondInt is \(secondInt)")
+
+// "firstInt is 16 and secondInt is 2"
 ```
 
 <br>
@@ -47,7 +48,3 @@ copy-in copy-out은 안으로 복사되고, 다시 바깥으로 복사된다는 
 > 참고 자료
 > - [Swift 언어 가이드 - Functions](https://docs.swift.org/swift-book/LanguageGuide/Functions.html)
 > - [Swift 문법, in-out 매개변수 특징 및 사용방법](https://0urtrees.tistory.com/128)
-
-<!-- (설명 이미지도 코드짜서 많이 넣고, 블로그에 올릴 수 있도록 h태그를 여러개 넣어주고 질문형으로 만들고 알려주듯이 노력하자.) -->
-
-<!-- 블로그 글로 작성하려면, 위의 예시코드 2개로 나눠서 설명하면서 작성하기. -->
