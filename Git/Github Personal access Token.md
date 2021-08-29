@@ -10,8 +10,6 @@ remote: Please see https://github.blog/2020-12-15-token-authentication-requireme
 
 <br>
 
-<img src = "" width = "50%" height="50%">
-
 # Personal access token 생성하기
 우선, 자신의 github에 들어가서 사진과 같이 오른쪽 위를 클릭하여 Sign out 위에 있는 Settings으로 들어간다.
 
