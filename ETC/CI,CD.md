@@ -15,7 +15,7 @@ CI는 `Continuous Intergration`의 약자로, `지속적인 통합`이라는 의
 
 <br>
 
-1. **코드 변경사항을 주기적으로 빈번이 머지`해야한다.**
+1. **코드 변경사항을 주기적으로 빈번이 merge 해야한다.**
 
 개발자들이 형상관리툴(git 등)을 사용하면서 2명 이상의 개발자가 오랜 기간동안 개발을 하다가, 한번에 merge를 하려고 하면 **새로운 기능의 코드를 작성하는 시간보다 충돌한 코드를 수정하는 시간이 더 오래걸릴 수 있다.** 이는 어떤 사람도 원하는 상황이 아닐것이다.
 
@@ -45,5 +45,29 @@ CI는 `Continuous Intergration`의 약자로, `지속적인 통합`이라는 의
 
 # CD (Continuous Delivery)
 
-CD는 Continuous Delivery의 약자로, `지속적인 제공`이라는 의미이다.
+CD는 **Continuous Delivery, 지속적인 제공**이라는 의미와 **Continuous Deployment, 지속적인 배포**라는 의미가 있다. 
 
+CI에서 Bulid되고 Test된 후에, 배포단계에서 release할 준비 단계를 거치고 문제가 없는지 수정할만한 것들이 없는지 개발자가 검증하는 팀이 검증을 한다.
+그 후에 나온 결론이 "이제 사용자들에게 서비스를 제공해도 되겠다! 라고 정해져서 배포를 `수동적`으로 진행하는 것이 **Continuous Delivery, 지속적인 제공**이다.
+
+또한 위와같이 배포할 준비가 되자마자 `자동화`를 통하여 배포를 진행하는 것을 **Continuous Deployment, 지속적인 배포**이다.
+
+**CD는 CI에의 연장**으로 생각하면 된다. 즉, CD가 진행되려면 CI가 우선적으로 되어있어야 한다고 봐도 무방할 것이다.
+
+또한, CI/CD는 어느정도의 자동화를 하냐에 따라 조금씩 다르기 떄문에, CI/CD라고 해서 모두 같은게 아니라 **회사마다 혹은 팀마다 어느정도 다를 수 있다.**
+
+<br>
+
+![배경 안넣은 CI:CD 이미지](https://user-images.githubusercontent.com/59376200/131975468-25331c03-f7d6-4877-89b5-8af156436ed6.png)
+
+
+
+
+
+<!-- 
+
+> Reference
+> - [[QA CI/CD란?]](https://itholic.github.io/qa-cicd/)
+> - [엘리님 유튜브 - CI/CD 5분 개념 정리](https://www.youtube.com/watch?v=0Emq5FypiMM&list=WL&index=7)
+
+ -->
