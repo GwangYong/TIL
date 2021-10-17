@@ -26,6 +26,7 @@
     - [고차함수(map, filter, reduce)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/map%2C%20filter%2C%20reduce.md)
     - [stride 함수](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/stride.md)
     - [Swift EOF(백준 10951번)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/EOF(%EB%AC%B4%ED%95%9C%20%EC%9E%85%EB%A0%A5%20%EB%B0%9B%EA%B8%B0).md)
+    - [swift 반복문 (for-in, while, repeat while)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/%EB%B0%98%EB%B3%B5%EB%AC%B8(for%2C%20while).md)
 
 - [MVC vs MVVM Pattern](https://github.com/GwangYong/TIL/blob/master/iOS/MVC%20vs%20MVVM%20Pattern.md)
 - [코코아 프레임워크(Cocoa Framework)](https://github.com/Gwangyong/TIL/blob/master/iOS/What%20is%20Cocoa%20Framework%3F.md)
