@@ -10,13 +10,37 @@
 # map(변형)
 `map`은 컨테이너 내부에 **기존 데이터를 변형(transform)하여 새로운 컨테이너를 생성한다.** 다만, 기존의 데이터는 변하지 않는다.
 
-map 함수를 사용하면 아래의 코드처럼 원래의 배열인 `numbers`의 값에 2를 곱한 값이 `mapArray`에 새로 생성된다.
+map은 for-in 구문과 큰 차이점은 없지만, map을 사용하면 **코드의 간결성, 재사용 용이성, 컴파일러 최적화 성능이 좋다**는 장점이 있다.
+
+<br>
+
+**for-in**
 ```swift
-let numbers = [0, 1, 2, 3]
-let mapArray = numbers.map { (number) -> Int in 
-    return number * 2
+let numArray = [0, 1, 2, 3]
+var forArray = [Int]()
+for num in numArray {
+    forArray.append(num * 2)
+}
+print(forArray) // [0, 2, 4, 6]
+```
+
+**map**
+```swift
+let numArray = [0, 1, 2, 3]
+let mapArray = numArray.map { (numArray: Int) -> Int in 
+    return numArray * 2
 }
 print("map \(mapArray)") // map [0, 2, 4, 6]
+```
+map 함수를 사용하면 아래의 코드처럼 원래의 배열인 `numbers`의 값에 2를 곱한 값이 `mapArray`에 새로 생성된다.
+
+<br>
+
+위 코드에서, 매개변수, 반환 타입, 반한 키워드를 생략한 후행 클로저가 아래의 코드이다. 이런식으로 사용할 수 있다는 것도 알아두면 좋을것이다. 
+```swift
+let numArray = [0, 1, 2, 3]
+let mapArray = numArray.map { $0 * 2 }
+print(mapArray) // [0, 2, 4, 6]
 ```
 
 <br>
@@ -73,3 +97,6 @@ print("reduce \(reduceResult)")
 이렇게 나오게 된다.
 
 그 이유는 reduce 초기값이 0이 아닌 5값으로 someArray의 각 요소들을 차례대로 접근해서 더했기 때문이다.
+
+> Reference
+> - [고차함수 - Map, Filter, Reduce 알아보기](https://shark-sea.kr/entry/Swift-%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98-Map-Filter-Reduce-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0)
