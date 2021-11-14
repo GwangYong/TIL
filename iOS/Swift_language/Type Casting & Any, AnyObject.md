@@ -85,6 +85,9 @@ print("Media library에는 \(movieCount)개의 영화와 \(songCount)개의 노�
 
 다운 캐스팅은 `부모 클래스`에서 `자식 클래스`로 `형 변환` 하는것을 의미한다. 쉽게 말하자면 **업캐스팅된 인스턴스를 다시 원래의 서브 클래스 타입으로 참조하고자 할때 사용한다.**
 
+표현식의 타입이 변환할 Type과 호환된다면, 변환할 Type으로 캐스팅된 인스턴스를 리턴함.
+상속 관계인 업캐스팅(Upcasting)와 다운 캐스틍(Downcasting)에서 사용되는데, Any와 AnyObject 타입을 사용하는 경우, 상속 관계가 아니라도 사용이 가능하다.
+
 다운캐스팅은 **실패할 수 있기 때문에, "as?"와 "as!" 연산자를 이용한다.**
 
 Optional 조건부 형식 `as?`는 다운캐스트를 시도하여 타입의 옵셔널 값을 반환하며, 강제 형식인 `as!`를 사용하면 강제 언래핑(Forced-Unwrap)을 하여 강제로 값을 반환하게 된다.
@@ -151,35 +154,12 @@ things.append(Movie(name: "Black Widow", director: "Cate Shortland"))
 
 그 이유로는 `AnyObject`는 위에서 설명했듯이, 모든 `클래스 타입`의 인스턴스만을 저장할 수 있다. 따라서 위의 코드와 같은 경우, **클래스 타입이 아니기 때문에** 오류가 나는 것이다.
 
-<br>
-
-이번에는 `things`를 반복하며, `switch`문에 `as` 연산자를 활용해서 해당 타입일 경우에 적절한 값을 출력하도록 해보자.
-```swift
-for thing in things {
-    switch thing {
-    case _ as Int:
-        print("Int Type")
-    case _ as Double:
-        print("Double Type")
-    case _ as String:
-        print("String Type")
-    case _ as (String) -> String:
-        print(("Jud"))
-    case let movie as Movie:
-        print("a movie name \(movie.name), dir. \(movie.director)")
-    default:
-        print("somthing else")
-    }
-}
-```
-
 `tip!` 파라미터 이름을 `_` 로 정의하면 함수를 호출할 때 파라미터 이름을 생략할 수 있다.
 
 
-
-<!-- 
+<br>
+<br>
 
 > Reference
 > - [The Swift Language Guide - Type Casting](https://docs.swift.org/swift-book/LanguageGuide/TypeCasting.html)
 
- -->
