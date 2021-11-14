@@ -154,12 +154,31 @@ things.append(Movie(name: "Black Widow", director: "Cate Shortland"))
 
 그 이유로는 `AnyObject`는 위에서 설명했듯이, 모든 `클래스 타입`의 인스턴스만을 저장할 수 있다. 따라서 위의 코드와 같은 경우, **클래스 타입이 아니기 때문에** 오류가 나는 것이다.
 
-`tip!` 파라미터 이름을 `_` 로 정의하면 함수를 호출할 때 파라미터 이름을 생략할 수 있다.
+<br>
 
+## as?, as!를 이용한 다운캐스팅(Downcasting)
+
+Any와 AnyObject가 모든 타입을 지정해주어서 매우 편해보일 것이다. 하지만, 예시를 하나 들어서 단점을 보자.
+
+```swift
+var name: Any = "Jud
+```
+위의 코드를 보면, 누가봐도 name의 타입은 String 타입일 것이다. 하지만, `name.`을 해서 자동완성을 하려해도 값이 나오지 않으며, `name.append("Jud2")`를 작성해도 에러가 날 것이다.
+
+이유는, **Any, AnyObject 타입은 런타임 시점에서 타입이 결정**되기 때문에, 컴파일 시점에서 해당 타입에 대해 알 수가 없다.
+
+그래서, Any타입인 name을 String으로 사용하고 싶다면,
+```swift
+if var name = name as? String {
+    name.append("Jud2")
+}
+```
+이런식으로 다운 캐스팅을 해주어야한다.
 
 <br>
 <br>
 
 > Reference
 > - [The Swift Language Guide - Type Casting](https://docs.swift.org/swift-book/LanguageGuide/TypeCasting.html)
+> - [Any와 AnyObject 알아보기](https://babbab2.tistory.com/128?category=828998)
 
