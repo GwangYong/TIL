@@ -60,10 +60,12 @@ let num = readLine()!.components(separatedBy: " ").map { Int($0)! }
 
 즉, **split로 출력한 값은 "Substring" 타입이며, components로 출력한 값은 "String" 타입** 이라는 것을 알 수 있다.
 
+split로 나누어서 리턴된 Substring 타입을 변환하려면, map 함수를 이용해서 타입을 변환해주면 해결된다.
+
 <br>
 
 
-이 부분만 보게되면 String 타입으로 해주는 components를 사용하는게 좋아보이지만, **components를 사용하려면 Foundation 프레임워크를 import** 해주지않으면 사용하지 못한다. 
+이 부분만 보게되면 String 타입으로 해주는 components를 사용하는게 좋아보이지만, **components를 사용하려면 Foundation 프레임워크를 import** 해주지않으면 사용하지 못한다.
 
 그러니 사용에 유의해서 원하는 것을 사용하면 될 것이다.
 
@@ -76,3 +78,14 @@ let input = readLine()!.split(separator: " ").map { Int(String($0))! }
 위의 방법은 위에 소개한 방법들과 거의 같다. 하지만, 단순히 `Int($0)!`이 아닌, `Int(String($0))!`으로 해주었다.
 
 이유는 이 방법이 **속도가 조금 더 빠르다**고 한다. (이유는 자세하게는 모르겠다.)
+
+<br>
+
+## 간단 정리
+
+|  `split`  |  `split`  |  `components`  |
+|:----------:|:----------:|:-------------:|
+| `import Foundation 여부 ` | import (X) |  import (O)  |
+| `Return Type` | [Substring] |   [String]    |
+| `장점` | Foundation을 import하지 않아서 용량에 변화가 없음 | Return Type이 [String]이다. |
+| `단점` | Return Type이 [Substring]이다. | Foundation을 import 해야하므로, 용량이 늘어남 |
