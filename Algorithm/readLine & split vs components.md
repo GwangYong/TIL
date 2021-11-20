@@ -45,8 +45,9 @@ let num = readLine()!.components(separatedBy: " ").map { Int($0)! }
 
 우선, split와 components의 다른점 중 하나는 타입이 다르다는 점이다. 
 
-아래 사진을 확인해보자
-<img width="455" alt="스크린샷 2021-10-02 오후 7 20 23" src="https://user-images.githubusercontent.com/59376200/135712245-abfb32a9-7545-4661-a767-c3bd24cb8c8d.png">
+아래 사진을 확인해보자.
+
+<img width="455" alt="스크린샷 2021-10-02 오후 7 20 23" src="https://user-images.githubusercontent.com/59376200/135712245-abfb32a9-7545-4661-a767-c3bd24cb8c8d.png"> <br>
 
 <img width="219" alt="스크린샷 2021-10-02 오후 7 21 14" src="https://user-images.githubusercontent.com/59376200/135712265-29c67e6d-670c-4da6-87d1-f3cee273dbeb.png">
 
@@ -68,7 +69,7 @@ let num = readLine()!.components(separatedBy: " ").map { Int($0)! }
 
 <br>
 
-**TIP**
+## **TIP**
 ```swift
 let input = readLine()!.split(separator: " ").map { Int(String($0))! }
 ```
