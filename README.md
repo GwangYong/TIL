@@ -35,6 +35,7 @@
 - [모바일 앱의 유형](https://github.com/Gwangyong/TIL/blob/master/iOS/%EB%AA%A8%EB%B0%94%EC%9D%BC%20%EC%95%B1%EC%9D%98%20%EC%9C%A0%ED%98%95.md)
 - [Xcode 시뮬레이터 키보드가 안보일 경우 세팅](https://github.com/Gwangyong/TIL/blob/master/iOS/Xcode%20%EC%8B%9C%EB%AE%AC%EB%A0%88%EC%9D%B4%ED%84%B0%20%ED%82%A4%EB%B3%B4%EB%93%9C%EA%B0%80%20%EC%95%88%EB%B3%B4%EC%9D%BC%20%EA%B2%BD%EC%9A%B0.md)
 - [Core Data란?](https://github.com/Gwangyong/TIL/blob/master/iOS/Core%20Data.md)
+- [Xcode Project http 허용](https://github.com/Gwangyong/TIL/blob/master/iOS/Xcode%20Project%20HTTP%20%ED%97%88%EC%9A%A9.md)
 
 ### AI
 - [딥러닝 객체 검출 용어 정리](https://github.com/GwangYong/TIL/blob/master/AI/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EA%B0%9D%EC%B2%B4%20%EA%B2%80%EC%B6%9C%20%EC%9A%A9%EC%96%B4%20%EC%A0%95%EB%A6%AC.md)
