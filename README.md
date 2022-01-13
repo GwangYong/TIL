@@ -1,6 +1,6 @@
 # TIL(Today I Learned)
 
-## TIL은 당일날 스스로 이해한 것을 바탕으로 정리한 것을 정리하는 공간입니다.
+## TIL은 당일날 이해한 것을 바탕으로 정리한 것을 정리하는 공간입니다.
 
 - 작성한 내용들 중에서 완벽히 이해한 내용들은 [개인블로그](https://jud00.tistory.com/) 에 포스트할 예정입니다.
 - 정리한 내용들은 더 공부가 될 때마다, 꾸준히 수정하며 기록합니다.
@@ -8,7 +8,7 @@
 <br>
 
 ## 분류
----
+
 
 ### iOS
 - Swift_language
@@ -28,6 +28,8 @@
     - [Swift EOF(백준 10951번)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/EOF(%EB%AC%B4%ED%95%9C%20%EC%9E%85%EB%A0%A5%20%EB%B0%9B%EA%B8%B0).md)
     - [swift 반복문 (for-in, while, repeat while)](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/%EB%B0%98%EB%B3%B5%EB%AC%B8(for%2C%20while).md)
     - [self property](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/self.md)
+    - [전달인자와 매개변수](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/%EC%A0%84%EB%8B%AC%EC%9D%B8%EC%9E%90(Argument)%EC%99%80%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98(Parameter).md)
+    - [인스턴스, 프로퍼티, 메서드](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%2C%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%2C%20%EB%A9%94%EC%84%9C%EB%93%9C.md)
 
 - [MVC vs MVVM Pattern](https://github.com/GwangYong/TIL/blob/master/iOS/MVC%20vs%20MVVM%20Pattern.md)
 - [코코아 프레임워크(Cocoa Framework)](https://github.com/Gwangyong/TIL/blob/master/iOS/What%20is%20Cocoa%20Framework%3F.md)
@@ -42,13 +44,6 @@
 - [딥러닝 용어 신경망](https://github.com/GwangYong/TIL/blob/master/AI/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EC%9A%A9%EC%96%B4%20%EC%8B%A0%EA%B2%BD%EB%A7%9D.md)
 - [머신러닝과 딥러닝](https://github.com/GwangYong/TIL/blob/master/AI/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D%EA%B3%BC%20%EB%94%A5%EB%9F%AC%EB%8B%9D.md)
 - [인공지능](https://github.com/GwangYong/TIL/blob/master/AI/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5.md)
-
-### Django
-- [Djagno 구조](https://github.com/GwangYong/TIL/blob/master/Django/Django_Directory.md)
-- [간단한 HTTP](https://github.com/GwangYong/TIL/blob/master/Django/Django_HTTP.md)
-- [Dajngo 공부내용 정리](https://github.com/GwangYong/TIL/blob/master/Django/Django_Study_Alone.md)
-- [MTV Pattern](https://github.com/GwangYong/TIL/blob/master/Django/MTV%20Pattern.md)
-- [개념 간단 정리(ETC)](https://github.com/GwangYong/TIL/blob/master/Django/ETC.md)
 
 ### Docker
 - [도커(Docker)란?](https://github.com/Gwangyong/TIL/blob/master/Docker/%EB%8F%84%EC%BB%A4(Docker)%EB%9E%80%3F.md)
