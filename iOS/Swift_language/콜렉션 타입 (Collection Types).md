@@ -1,6 +1,7 @@
 ## 배열 (Array)
 
-데이터 타입의 값들을 순서대로 저장하는 리스트.
+배열은 데이터 타입의 값들을 순서대로 저장하는 리스트이다. 즉, 데이터들의 집합이라고 보면 된다.<br>
+위에서 말한대로 `순서`가 있기 때문에 요소에 접근하기 편하다.
 
 ### 배열의 축약형 문법
 ```swift
@@ -63,9 +64,9 @@ shoppingList[0..2]
 
 <br>
 
-## 셋 (Set)
+## 세트 (Set)
 
-같은 데이터 타입의 값을 순서없이 저장하는 리스트
+세트는 같은 데이터 타입의 값을 순서없이 저장하는 리스트이다. 배열과 비슷하지만, 세트는 배열과 달리 순서가 없기 때문에 서로 같은 값들을 구분할 수 없다. 그러므로 세트에서는 중복을 허용하지 않는다.
 
 ### 빈 Set 생성
 
@@ -88,7 +89,6 @@ var favoriteGenres: Set = ["Rock"], ["Classical"], ["Hip hop"]
 <br>
 
 ### Set 명령
-![img.png](img.png)
 
 ```swift
 let oddDigits: Set = [1, 3, 5, 7, 9]
@@ -107,9 +107,9 @@ oddDigits.symmetricDifference(singleDigitPrimeNumbers).sorted()
 
 <br>
 
-## 사전 (Dictionaries)
+## 딕셔너리 (Dictionaries)
 
-순서없기 키(Key)와 값(Value) 한 쌍으로 데이터를 저장하는 컬렉션 타입.
+딕셔너리는 순서없기 키(Key)와 값(Value) 한 쌍으로 데이터를 저장하는 컬렉션 타입이다.
 
 [Key : Value]형태
 
