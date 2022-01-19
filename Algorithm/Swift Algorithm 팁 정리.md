@@ -1,4 +1,17 @@
-여기에 적는 내용들은 다른 블로그들과 구글링을 통해서 Swift로 알고리즘을 할 때, 도움이 되는 내용들을 적어둠.
+여기에 적는 내용들은 다른 블로그들과 구글링을 통해서 Swift로 알고리즘을 할 때, 도움이 될만한 내용들을 적어둠.
+
+## 파일 관리
+
+일반적으로 생기는 파일 관리 시나리오.
+1. main.swift 파일에서 문제를 푼다.
+2. 완료한 파일 이름을 원하는대로 수정한다. (ex. 6100.swift)
+3. 새로운 main.swift 파일을 생성한다.
+
+하지만, 여기서 "expressions are not allowed at the top level"라는 에러가 나오며 빌드가 되지 않을텐데,
+이유로는 3번째에서 새로 만들어준 main.swift가 main.swift가 아니기 때문이다.
+
+그러니 이런 상황에서는 이름을 수정한(ex. 6100.swift) 파일을 클릭하여 우측에 속성 탭을 확인한다.<br>
+중간쯤에 "Target membership"라는 공간이 있을건데, 거기에 있는 체크를 해제하면 에러는 나도 빌드는 잘 된다.
 
 ## 키보드 입력받는 방법.
 ```swift
@@ -188,3 +201,4 @@ abs(-29) // 29
 <!-- 블로그에는 작성 X -->
 > Reference 
 > [알고리즘에 필요한 Swift Basic 총정리](https://twih1203.medium.com/swift-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%ED%95%84%EC%9A%94%ED%95%9C-swift-basic-%EC%B4%9D%EC%A0%95%EB%A6%AC-d86453bbeaa5)
+> [Swift 알고리즘 - Xcode 환경 세팅](https://jeong9216.tistory.com/54)
