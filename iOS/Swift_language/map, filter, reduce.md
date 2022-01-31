@@ -16,143 +16,179 @@ map은 for-in 구문과 큰 차이점은 없지만, map을 사용하면 **코드
 
 <br>
 
+for-in 과 map 메서드를 비교해보자.
+
 **for-in**
 ```swift
-let numArray = [0, 1, 2, 3]
-var forArray = [Int]()
-for num in numArray {
-    forArray.append(num * 2)
+let numbers: [Int] = [0, 1, 2, 3]
+var doubleNumbers: [Int] = [Int]()
+
+for number in numbers {
+    doubleNumbers.append(number * 2)
 }
-print(forArray) // [0, 2, 4, 6]
+
+print(doubleNumbers) // [0, 2, 4, 6]
+
+// 아래와 같이 기존의 데이터는 변하지 않음.
+print(numbers) // [0, 1, 2, 3]
 ```
 
 **map**
 ```swift
-let numArray = [0, 1, 2, 3]
-let mapArray = numArray.map { (numArray: Int) -> Int in 
-    return numArray * 2
+let numbers: [Int] = [0, 1, 2, 3]
+let doubleNumbers: [Int] = numbers.map { (number: Int) -> Int in
+    return number * 2
 }
-print("map \(mapArray)") // map [0, 2, 4, 6]
+
+print(doubleNumbers) // [0, 2, 4 ,6]
 ```
-map 함수를 사용하면 아래의 코드처럼 원래의 배열인 `numbers`의 값에 2를 곱한 값이 `mapArray`에 새로 생성된다.
+
+위의 코드처럼, map 메서드를 사용하면 코드가 더욱 간결해지는걸 볼 수 있다.
 
 <br>
 
-위 코드에서, 매개변수, 반환 타입, 반한 키워드를 생략한 후행 클로저가 아래의 코드이다. 이런식으로 사용할 수 있다는 것도 알아두면 좋을것이다. 
+위의 코드에서 **매개변수 및 반환 타입, 반환 키워드(return)** 를 생략하고, **후행 클로저**를 사용하면 아래와 같이 코드가 더 간략해질 수 있다.
+
+**map 축약**
+
 ```swift
-let numArray = [0, 1, 2, 3]
-let mapArray = numArray.map { $0 * 2 }
-print(mapArray) // [0, 2, 4, 6]
+let numbers: [Int] = [0, 1, 2, 3]
+let doubleNumbers: [Int] = numbers.map { $0 * 2 }
+
+print(doubleNumbers) // [0, 2, 4, 6]
+
+// 동일하게 numbers의 값은 [0, 1, 2, 3]으로 기존의 데이터는 변하지 않음.
 ```
 
 <br>
 
 # filter(추출)
-`filter`는 **컨테이너 내부에 값을 걸러서 새로운 컨테이너로 추출한다.**
-
-반환 타입은 `Bool`이며, `true`이면 값을 포함하고, `false`이면 값을 포함하지 않는다.
-
-
-우선은 for-in문 부터 확인하자
-**for-in**
-```swift
-let numbers: [Int] = [10, 5, 20, 13, 4]
-
-var filter: [Int] = [Int]()
-
-for num in numbers {
-    if num > 10 {
-        filter.append(num)
-    }
-}
-
-print(filter)
-```
+`filter`는 **컨테이너 내부에 값을 걸러서 새로운 컨테이너로 추출한다.**  **반환 타입은 `Bool`** 이며, `true`이면 값을 포함하고, `false`이면 값을 포함하지 않는다.
 
 <br>
 
-다음으로는, filter 메소드를 사용해보자
+for-in 과 map 메서드를 비교해보자.
+
+**for-in**
 
 ```swift
-let intArray = [10, 5, 20, 13, 4]
-let filterArray = intArray.filter { (num: Int) -> Bool in 
-    return num > 10
+let numbers: [Int] = [0, 1, 2, 3, 4, 5]
+var evenNumbers: [Int] = [Int]()
+
+for number in numbers {
+    if number % 2 == 0 {
+        evenNumbers.append(number)
+    }
 }
 
-print(filterArray)
+print(evenNumbers) // [0, 2, 4]
+print(numbers) // [0 ,1, 2, 3, 4, 5]
 ```
 
-이처럼, filter 메소드를 사용하면 코드가 보기쉽고 간략화된 것을 볼 수 있다.
+이처럼 2의 배수를 찾거나 하는 식으로 값을 걸러내어 사용할 수 있다.
 
-또한, 클로저를 사용했기 때문에, **후행 클로저**를 사용해서 아래와같이 더욱 간단하게 작성할 수 있다.
+<br>
+
+**filter**
 
 ```swift
-let intArray = [10, 5, 20, 13, 4]
-let filterArray = intArray.filter { $0 > 10 }
+let numbers: [Int] = [0, 1, 2, 3, 4, 5]
+let evenNumbers: [Int] = numbers.filter { (number: Int) -> Bool in
+    return number % 2 == 0
+}
 
-print("filter \(filterArray)") // filter [20, 13]
+print(evenNumbers) // [0, 2, 4]
+print(numbers) // [0, 1, 2, 3, 4, 5]
+```
+
+이처럼 filter 메서드를 사용하면 for-in 문에 비해 코드가 보기쉽고 간략화된 것을 볼 수 있다. 또한, 아래와 같이 map 메서드와 동일하게 생략도 할 수 있다.
+
+**filter 축약**
+
+```swift
+let numbers: [Int] = [0, 1, 2, 3, 4, 5]
+let evenNumbers: [Int] = numbers.filter { $0 % 2 == 0 }
+
+print(evenNumbers) // [0, 2, 4]
+print(numbers) // [0, 1, 2, 3, 4, 5]
 ```
 
 <br>
 
 # reduce(결합)
-`reduce`는 컨테이너 내부의 요소를 하나로 통합시켜준다.
+`reduce`는 **컨테이너 내부의 요소를 하나로 통합**시켜준다.
 
-첫 번째 매개변수를 통해 초기값을 결정해줄 수 있으며, 정수 배열이라면 연산 결과를 합치고 문자열 배열이라면 문자열을 하나로 통합하는 일을 해준다.
+첫 번째 매개변수를 통해 **초기값**을 지정해줄 수 있으며, 정수 배열이라면 연산 결과를 합치고 문자열 배열이라면 문자열을 하나로 통합하는 일을 해준다.
+
+<br>
+
+for-in 과 map 메서드를 비교해보자.
 
 **for-in**
 ```swift
-let someArray: [Int] = [0, 1, 2, 3, 4, 5]
+let numbers: [Int] = [0, 1, 2, 3, 4, 5]
 var reduceResult: Int = 0
 
-for arr in someArray {
-    reduceResult += arr
+for number in numbers {
+    reduceResult += number
 }
 
-print(reduceResult)
+print("reduceResult: \(reduceResult)") // reduceResult: 15
+print(numbers) // [0, 1, 2, 3, 4, 5]
 ```
 
-
-이번에는 reduce 메소드를 사용해보자.
-
-`someArray`배열에 초기값을 만들어준 후, `reduce` 함수 첫 번째 매개변수의 초기값을 0으로 설정해주었으며, 두 번째 매개변수 클로저를 보면 `result`와 `element`를 더해서 반환해준다.
-
-이렇게 되면 `someArray`배열에 있는 각 요소들은 더해지며 `reduceResult` 변수에 대입된다.
-
-여기서 result 매개변수는 누적값을 뜻하며, element 매개변수는 배열의 요소값을 뜻한다. 
+**reduce**
 
 ```swift
-let someArray = [1, 2, 3, 4, 5]
-let reduceResult = someArray.reduce(0) {
-    (result: Int, element: Int) -> Int in
-    print("\(result) + \(element)")
-    return result + element
+let numbers: [Int] = [0, 1, 2, 3, 4, 5]
+let reduceResult: Int = numbers.reduce(0) {
+    (result: Int, next: Int) -> Int in
+    print("\(result) + \(next)")
+    return result + next
 }
 
-print("reduce \(reduceResult)")
-//  0 + 1
-//  1 + 2
-//  3 + 3
-//  6 + 4
-//  10 + 5
-//  reduce 15
+print("reduceResult: \(reduceResult)")
+// 0 + 0
+// 0 + 1
+// 1 + 2
+// 3 + 3
+// 6 + 4
+// 10 + 5
+// reduceResult: 15
+
+print(numbers)
+// [0, 1, 2, 3, 4, 5]
 ```
+`numbers`배열에 초기값을 만들어준 후, `reduce` 메서드 첫 번째 매개변수의 초기값을 0으로 설정해주었으며, 두 번째 매개변수 클로저를 보면 `result`와 `next`를 더해서 Int형태로 반환해준다.
+
+이렇게 되면 `numbers`배열에 있는 각 요소들은 더해지며 `reduceResult` 변수에 대입된다.
+
+여기서 **result 매개변수는 누적값**을 뜻하며, **next 매개변수는 배열의 요소값**을 뜻한다. 
 
 <br>
 
-만약, 초기값인 `reduce(0)` 값을 `reduce(5)`로 변경해 주었을 경우, 0이 아닌 5로 변경해 주었으므로 출력 결과는 아래와 같이 나오게된다.
+만약, 초기값인 `numbers.reduce(0)` 를 `numbers.reduce(5)` 로 변경해 주었을 경우, 초기값이 0이 아닌 5이기 때문에 출력 결과는 아래와 같이 나오게된다.
 ```swift
-//  5 + 1
-//  6 + 2
-//  8 + 3
-//  11 + 4
-//  15 + 5
-//  reduce 20
+print("reduceResult: \(reduceResult)")
+// 5 + 0
+// 5 + 1
+// 6 + 2
+// 8 + 3
+// 11 + 4
+// 15 + 5
+// reduceResult: 20
+
+print(numbers)
+// [0, 1, 2, 3, 4, 5]
 ```
 
-그 이유는 reduce 초기값이 0이 아닌 5값으로 someArray의 각 요소들을 차례대로 접근해서 더했기 때문이다.
+또한, reduce도 map과 filter와 마찬가지로 여러가지 생략이 가능하다.
 
-<br>
+**reduce 축약**
+```
+let numbers: [Int] = [0, 1, 2, 3, 4, 5]
+let reduceResult: Int = numbers.reduce(0) { $0 + $1 }
 
-> Reference
-> - [고차함수 - Map, Filter, Reduce 알아보기](https://shark-sea.kr/entry/Swift-%EA%B3%A0%EC%B0%A8%ED%95%A8%EC%88%98-Map-Filter-Reduce-%EC%95%8C%EC%95%84%EB%B3%B4%EA%B8%B0)
+print(reduceResult) // 15
+print(numbers) // [0, 1, 2, 3, 4, 5]
+```
