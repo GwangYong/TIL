@@ -185,7 +185,7 @@ print(numbers)
 또한, reduce도 map과 filter와 마찬가지로 여러가지 생략이 가능하다.
 
 **reduce 축약**
-```
+```swift
 let numbers: [Int] = [0, 1, 2, 3, 4, 5]
 let reduceResult: Int = numbers.reduce(0) { $0 + $1 }
 
