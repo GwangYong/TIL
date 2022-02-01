@@ -67,7 +67,7 @@ print(doubleNumbers) // [0, 2, 4, 6]
 
 <br>
 
-for-in 과 map 메서드를 비교해보자.
+for-in 과 filter 메서드를 비교해보자.
 
 **for-in**
 
@@ -122,7 +122,7 @@ print(numbers) // [0, 1, 2, 3, 4, 5]
 
 <br>
 
-for-in 과 map 메서드를 비교해보자.
+for-in 과 reduce 메서드를 비교해보자.
 
 **for-in**
 ```swift
