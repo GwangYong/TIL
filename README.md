@@ -39,6 +39,7 @@
 - [Core Data란?](https://github.com/Gwangyong/TIL/blob/master/iOS/Core%20Data.md)
 - [Xcode Project http 허용](https://github.com/Gwangyong/TIL/blob/master/iOS/Xcode%20Project%20HTTP%20%ED%97%88%EC%9A%A9.md)
 - [View Controller 생명주기(ViewController Life Cycle)](https://github.com/Gwangyong/TIL/blob/master/iOS/View%20Controller%EC%9D%98%20%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0(View%20Controller%20Life%20Cycle).md)
+- [iOS Push, Present 화면 전환 방법](https://github.com/Gwangyong/TIL/blob/master/iOS/iOS%20Push%2C%20Present%20%ED%99%94%EB%A9%B4%20%EC%A0%84%ED%99%98.md)
 
 ### AI
 - [딥러닝 객체 검출 용어 정리](https://github.com/GwangYong/TIL/blob/master/AI/%EB%94%A5%EB%9F%AC%EB%8B%9D%20%EA%B0%9D%EC%B2%B4%20%EA%B2%80%EC%B6%9C%20%EC%9A%A9%EC%96%B4%20%EC%A0%95%EB%A6%AC.md)
