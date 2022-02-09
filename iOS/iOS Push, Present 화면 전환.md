@@ -49,9 +49,10 @@ Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present
 
 ![CodePush Storyboard ID Value](https://user-images.githubusercontent.com/59376200/152977985-557bd9e6-7ae0-47eb-ae25-ffb6625f0a12.png)
 
-그리고 맨 처음 Storyboard에 만들어둔 `Code로 Push` 버튼을 아래와 같이 **ViewController.swift**에 `Control + 드래그`를 통해서 **액션 함수(Action)** 로 정의해준다. 그러면 **@IBAction ~** 형식의 소스가 나타나게된다.
+그리고 맨 처음 Storyboard에 만들어둔 `Code로 Push` 버튼을 아래와 같이 **ViewController.swift**에 `Control + 드래그`를 통해서 **액션 함수(Action)** 로 정의해준다. 그러면 **@IBAction ...** 형식의 소스가 나타나게된다.
 
-![CodePush 방법](https://user-images.githubusercontent.com/59376200/152978128-e31b43d0-00b9-4115-a503-dec7e82a81b4.gif)
+![CodePush 방법](https://user-images.githubusercontent.com/59376200/153128967-43d99578-65ef-4b37-aaa2-ba995d6dbec8.gif)
+
 
 그리고 그 안에 아래와 같은 코드를 작성해주자.
 ```Swift
@@ -80,7 +81,7 @@ self.navigationController?.pushViewController(viewController, animated: true)
 
 이번에도 마찬가지로 Storyboard에 만들어둔 `Code로 Present` 버튼을 **ViewController.swift**에 액션 함수로 정의해주고
 
-![CodePresent 방법](https://user-images.githubusercontent.com/59376200/152978687-0673651c-3795-425f-872d-793338b0495f.gif)
+![CodePresent 방법](https://user-images.githubusercontent.com/59376200/153128816-7990a5d9-9065-4c77-8c76-c21ba857714c.gif)
 
 그 액션 함수 안에 아래의 코드를 작성하면 된다.
 
