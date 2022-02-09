@@ -43,10 +43,59 @@ Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present
 
 ## Code로 Push
 
+이번에는 Segue가 아닌, **코드를 이용하여 Push**를 해보자. 
+
+우선 동일하게 ViewController를 하나 생성해준다. 그리고 그 ViewController에 이미지와 같이 **Storyboard ID에 값을 지정**해준다. (여기서는 Code로 Push하기 때문에, CodePush라고 임의로 지정해 주었다.)
+
+![CodePush Storyboard ID Value](https://user-images.githubusercontent.com/59376200/152977985-557bd9e6-7ae0-47eb-ae25-ffb6625f0a12.png)
+
+그리고 맨 처음 Storyboard에 만들어둔 `Code로 Push` 버튼을 아래와 같이 **ViewController.swift**에 `Control + 드래그`를 통해서 **액션 함수(Action)** 로 정의해준다. 그러면 **@IBAction ~** 형식의 소스가 나타나게된다.
+
+![CodePush 방법](https://user-images.githubusercontent.com/59376200/152978128-e31b43d0-00b9-4115-a503-dec7e82a81b4.gif)
+
+그리고 그 안에 아래와 같은 코드를 작성해주자.
+```Swift
+guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "자신이 만들어준 Storyboard ID값") else { return }
+self.navigationController?.pushViewController(viewController, animated: true)
+```
+
+위의 코드는 **Storyboard에서 정의한 View Controller에 해당하는 ID값을 찾아서 인스턴스화**를 해주는 역할을 한다. 그리고, 2번째 코드를 통해 인스턴스화를 해준 viewController를 navigation 스택에 새로운 화면이 push된다.
+
+추가로 **identifier**란, 스토리보드에서 뷰 컨트롤러를 구분할 수 있게 만들어주는 별명(?) 이라고 생각하면 된다.
+
+이제 실행하면 아래와같이 잘 되는것을 볼 수 있다.
+
+![CodePush 시뮬레이션](https://user-images.githubusercontent.com/59376200/152978356-ab343b4b-8f2d-495e-b82c-b6ec08fff3ad.gif)
+
 
 <br>
 
 ## Code로 Present
+
+이 방법은 위의 Code로 Push하는 많이 동일하다.
+
+새로운 ViewController을 생성해준 후, 이 ViewController의 **Storyboard ID 값을 지정**해준다 (여기서는 Code로 Present하기 때문에, CodePresent로 임의로 지정해주었다.)
+
+![CodePresent Storyboard ID Value](https://user-images.githubusercontent.com/59376200/152978459-d71bdd37-e0df-4db5-b029-8b9db5589f07.png)
+
+이번에도 마찬가지로 Storyboard에 만들어둔 `Code로 Present` 버튼을 **ViewController.swift**에 액션 함수로 정의해주고
+
+![CodePresent 방법](https://user-images.githubusercontent.com/59376200/152978687-0673651c-3795-425f-872d-793338b0495f.gif)
+
+그 액션 함수 안에 아래의 코드를 작성하면 된다.
+
+```swift
+guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "자신이 만들어준 Stroyboard ID의 값") else { return }
+self.present(viewController, animated: true, completion: nil)
+```
+
+이렇게 하면 Present로 잘 나오는 모습을 볼 수 있다.
+
+![CodePresent 시뮬레이터](https://user-images.githubusercontent.com/59376200/152978886-66b3eafa-dd7b-48a2-a8b7-c605410e7cab.gif)
+
+<br>
+
+Code로 Present와 Push는 ViewController에 Storyboard ID 값을 지정하고 액션함수로 정의하고 하는 방식은 동일하며, 그 안에 들어가는 코드 부분만이 다르다.
 
 <!-- 
 
