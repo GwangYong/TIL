@@ -19,13 +19,31 @@ Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present
 
 첫 방법은 **Segue로 Push**하는 방법이다. 
 
-먼저 Main.storyboard에 ViewController를 하나 생성해주고 아래 영상과 같이 `control`을 누르고 클릭해준 후, 마우스 포인터로 만들어준 ViewController에 `Show` 로 연결해준다.
+먼저 Main.storyboard에 ViewController를 하나 생성해주고 아래 영상과 같이 `control`을 누르고 클릭해준 후, 마우스 포인터로 만들어준 ViewController에 `Show` 로 연결해주면 끝이다. 이제 Segue로 Push 버튼을 누르면 화면 전환이 될 것이다.
 
 ![Segue로 Push 방법](https://user-images.githubusercontent.com/59376200/152904009-de2bf9a1-8b26-4fb7-a325-764e935673f1.gif)
 
-그러면 아래의 영상과 같이 Segue로 Push 버튼을 눌렀을 경우 화면 전환이 되며, 상단의 Back 버튼과 오른쪽으로 스와이프를 통해서 뒤로가기가 된다.
+이번에는 뒤로가기 버튼도 만들어보자. 아래의 사진과 같이 `command + N`을 눌러서 **Cocoa touch** 파일을 생성해준다. 
 
-![Segue로 Push 시연](https://user-images.githubusercontent.com/59376200/152904155-0efdad49-f6ab-438b-9588-15edfa5e2cf3.gif)
+<img width="728" alt="스크린샷 2022-02-11 오후 7 00 55" src="https://user-images.githubusercontent.com/59376200/153572074-9a9d31f2-bb1f-4e3a-9aca-7b00c2406c03.png">
+
+<img width="727" alt="스크린샷 2022-02-11 오후 7 06 04" src="https://user-images.githubusercontent.com/59376200/153572810-7df12554-2f6b-4408-a588-4e5e2391c85a.png">
+
+<br>
+
+그리고, 화면 전환을 하려는 ViewController를 아래의 사진처럼 storyboard에서 파일명으로 매칭해준다. (이러면 SeguePushViewController이라는 파일이 이 ViewController에 매칭된다.)
+
+<img width="908" alt="스크린샷 2022-02-11 오후 7 03 53" src="https://user-images.githubusercontent.com/59376200/153572444-92413b29-d7fd-418a-bfae-67473758c365.png">
+
+그 후, 뒤로가기 버튼을 `Control + 클릭`를 통해서 SeguePushViewController 파일에 **액션 함수(Action)** 로 정의해준다. 그리고 그 안에 아래의 코드를 작성하면 뒤로가기 버튼을 눌렀을 때, push하기 전의 화면으로 돌아가게된다.
+
+```swift
+self.navigationController?.popViewController(animated: true)
+```
+
+이제 아래의 영상과 같이 Segue로 Push 버튼을 눌렀을 경우 화면 전환이 되며 **상단의 Back 버튼, 오른쪽으로 스와이프, 만들어준 뒤로가기 버튼 3가지 방법**으로 뒤로가기가 된다.
+
+![Segue로 Push, pop 시연](https://user-images.githubusercontent.com/59376200/153574768-d54d90af-d18c-4c5d-b55d-13be7600a285.gif)
 
 <br>
 
