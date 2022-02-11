@@ -23,7 +23,11 @@ Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present
 
 ![Segue로 Push 방법](https://user-images.githubusercontent.com/59376200/152904009-de2bf9a1-8b26-4fb7-a325-764e935673f1.gif)
 
-이번에는 뒤로가기 버튼도 만들어보자. 아래의 사진과 같이 `command + N`을 눌러서 **Cocoa touch** 파일을 생성해준다. 
+<br>
+
+### Segue로 Push 뒤로가기!
+
+이번에는 뒤로가기 버튼도 만들어보자. 아래의 사진과 같이 `command + N`을 눌러서 **Cocoa Touch Class** 파일을 생성해준다. 
 
 <img width="728" alt="스크린샷 2022-02-11 오후 7 00 55" src="https://user-images.githubusercontent.com/59376200/153572074-9a9d31f2-bb1f-4e3a-9aca-7b00c2406c03.png">
 
@@ -35,7 +39,7 @@ Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present
 
 <img width="908" alt="스크린샷 2022-02-11 오후 7 03 53" src="https://user-images.githubusercontent.com/59376200/153572444-92413b29-d7fd-418a-bfae-67473758c365.png">
 
-그 후, 뒤로가기 버튼을 `Control + 클릭`를 통해서 SeguePushViewController 파일에 **액션 함수(Action)** 로 정의해준다. 그리고 그 안에 아래의 코드를 작성하면 뒤로가기 버튼을 눌렀을 때, push하기 전의 화면으로 돌아가게된다.
+그 후, 뒤로가기 버튼을 `Control + 클릭`를 통해서 SeguePushViewController 파일에 **액션 함수(Action)** 로 정의해준다. 그리고 그 안에 아래의 코드를 작성하면 뒤로가기 버튼을 눌렀을 때, **push하기 전의 화면**으로 돌아가게된다.
 
 ```swift
 self.navigationController?.popViewController(animated: true)
@@ -53,9 +57,25 @@ self.navigationController?.popViewController(animated: true)
 
 ![Segue로 Present 방법](https://user-images.githubusercontent.com/59376200/152903474-90504bfd-7040-403d-a138-aac910e82998.gif)
 
-그러면 이번에는 영상과같이 마지막에 ViewController의 모습이 아래서 위로 화면이 생기는 Present 방식으로 된 것이 보인다.
+이렇게되면 Segue로 Present 버튼을 클릭했을 경우에 화면 전환이 이루어질 것이다. 이제 뒤로가기 기능도 추가해보자! 위에와 준비하는 방법은 똑같다. 
 
-![Segue로 Present 시연](https://user-images.githubusercontent.com/59376200/152903742-f52eeb6b-fc13-4bc1-bb1b-96a1b1ae5978.gif)
+<br>
+
+### Segue로 Present 뒤로가기!
+
+1. Segue로 Push와 동일하게 **Cocoa Touch Class 파일을 생성**해준다. (여기서는 임의로 `SeguePresentViewController`로 임의로 정했다.)
+2. Storyboard에서 화면 전환할 ViewController에 **"뒤로가기"** 버튼을 생성해주고, Class에 파일 이름을 먼저 만들어준 **Cocoa Touch Class 파일 이름과 동일하게 맞춘다.** (임의로 정한 `SeguePresentViewController`로 이름을 맞춰줌)
+3. Assistant를 켜서 만들어준 뒤로가기 버튼을 `Control + 클릭`해서 **액션함수로 정의**해준다.
+
+마지막으로 들어갈 코드는 Push방법이 아닌, Present 방법으로 화면전환을 하였기에 아래의 코드를 작성해주면 된다.
+
+```swift
+self.presentingViewController?.dismiss(animated: true,completion: nil)
+```
+
+이제 아래처럼 화면 전환이 잘 되는걸 볼 수 있다.
+
+![Segue로 Present 시연](https://user-images.githubusercontent.com/59376200/153577936-071bce85-e477-43a1-8133-f7b72f8a1fd6.gif)
 
 <br>
 
@@ -82,9 +102,30 @@ self.navigationController?.pushViewController(viewController, animated: true)
 
 추가로 **identifier**란, 스토리보드에서 뷰 컨트롤러를 구분할 수 있게 만들어주는 별명(?) 이라고 생각하면 된다.
 
+이번에도 뒤로가기 버튼을 만들어보자.
+
+<br>
+
+### Code로 Push 뒤로가기!
+
+(이 방법은 Segue로 Push에서 설명한 뒤로가기와 방법이 동일하다. 하지만, 혹시 몰라서 조금 길게 다시 설명을 적어두었다.)
+
+이번에는 설명할 내용도 없다. 왜냐하면 **Segue로 Push한 방법과 같기 때문**이다.
+
+이유로는 연결만 Segue와 Code로 하는 방식이 다른거지 **화면 전환 방식은 Push로 같기 때문**에 pop만 해주면 된다.
+
+1. Cocoa Touch Class 파일을 만든다.
+2. 뒤로가기 버튼을 만들어주고, ViewController와 1번에 만들어준 파일 명을 동일하게 맞춰서 코드 작성이 가능하도록 한다.
+3. 만들어준 뒤로가기 버튼을 액션함수로 정의해준다.
+4. 아래의 코드를 액션함수 안에 정의하여, 버튼을 누르면 코드가 실행되도록한다.
+
+```swift
+self.navigationController?.popViewController(animated: true)
+```
+
 이제 실행하면 아래와같이 잘 되는것을 볼 수 있다.
 
-![CodePush 시뮬레이션](https://user-images.githubusercontent.com/59376200/152978356-ab343b4b-8f2d-495e-b82c-b6ec08fff3ad.gif)
+![CodePush 시뮬레이션](https://user-images.githubusercontent.com/59376200/153580382-7eafb678-beb4-4daf-a452-9ebc86854c39.gif)
 
 
 <br>
@@ -108,25 +149,20 @@ guard let viewController = self.storyboard?.instantiateViewController(withIdenti
 self.present(viewController, animated: true, completion: nil)
 ```
 
-이렇게 하면 Present로 잘 나오는 모습을 볼 수 있다.
-
-![CodePresent 시뮬레이터](https://user-images.githubusercontent.com/59376200/152978886-66b3eafa-dd7b-48a2-a8b7-c605410e7cab.gif)
+이렇게하면, 화면이 제대로 Present 되는걸 볼 수 있다. 마지막으로 뒤로가는 방법도 알아보자!
 
 <br>
 
-Code로 Present와 Push는 ViewController에 Storyboard ID 값을 지정하고 액션함수로 정의하고 하는 방식은 동일하며, 그 안에 들어가는 코드 부분만이 다르다.
+### Code로 Present 뒤로가기!
 
-<!-- 
+이 역시 Segue, Code 방식이 다른거지, 위의 Segue로 Present와 동일하기 때문에 **Segue로 Present 뒤로가기** 방식과 동일하다.
 
-# 업데이트할 항목
+3번이나 했으니 이번에는 설명을 적지 않아도 괜찮을거같아 마지막에 액션 함수에 들어갈 코드만 적어두겠다.
 
-전부 아래와같이 파일을 생성해주고, 그에맞게 연결해주고 각각 작성해야하는 pop, dismiss 코드들을 넣자.
+```swift
+self.presentingViewController?.dismiss(animated: true,completion: nil)
+```
 
-나중에 이렇게 파일 추가해서, 코드 사용할 수 있도록 하고 popViewController나 dismiss 사용해서 뒤로 가는 버튼 기능 만드는 내용 추가하자
+이렇게 하면 Present로 잘 나오는 모습을 볼 수 있다.
 
-`command + N`을 눌러서 `Cocoa Touch Class`를 생성해준다. (이름은 자유지만, 여기서는 SeguePushViewController로 해주었다.)
-
-
-
-
- -->
+![CodePresent 시뮬레이터](https://user-images.githubusercontent.com/59376200/153581312-91c0d043-58d1-4167-a3c9-8bb991ccb9ae.gif)
