@@ -7,18 +7,16 @@
 2. 완료한 파일 이름을 원하는대로 수정한다. (ex. 6100.swift)
 3. 새로운 main.swift 파일을 생성한다.
 
-하지만, 여기서 "expressions are not allowed at the top level"라는 에러가 나오며 빌드가 되지 않을텐데, 이유로는 3번째에서 새로 만들어준 main.swift가 main.swift가 아니기 때문이다.
-
-[공식문서 설명](https://developer.apple.com/swift/blog/?id=7) 을 보면 아래와 같은 설명이 있다.
+하지만, 여기서 "expressions are not allowed at the top level"라는 에러가 나오며 빌드가 되지 않을텐데, 이유로는 [공식문서 설명](https://developer.apple.com/swift/blog/?id=7) 을 보면 아래와 같은 설명이 있다.
 
 > “main.swift” file can contain top-level code, and the order-dependent rules apply as well. In effect, the first line of code to run in “main.swift” is implicitly defined as the main entrypoint for the program.
 
 
-대충 main.swift가 Entry Point로 설정되어 있기 때문에, main.swift만 예외로 코드를 작성할 수 있다고 한다.
+대충 main.swift가 Entry Point로 설정되어 있기 때문에 main.swift만 예외로 코드를 작성할 수 있다고 한다.
 
 그러니 이런 상황에서는 이름을 수정한(ex. 6100.swift) 파일을 클릭하여 우측에 속성 탭을 확인하자. 
 
-그러면, 중간쯤에 "Target membership"라는 공간이 있을건데, 거기에 있는 체크를 해제하면 이름을 변경한 파일의 코드에 에러가 나지만, 새로 만든 main.swift에 작성한 코드는 빌드가 잘 되어서 다음 문제를 문제없이 풀 수 있다.
+그러면, 중간쯤에 **"Target membership"** 라는 공간이 있는데, 거기에 있는 체크를 해제하면 이름을 변경한 파일의 코드에 에러가 나지만, 새로 만든 main.swift에 작성한 코드는 빌드가 잘 되어서 다음 문제를 문제없이 풀 수 있다.
 
 <br>
 
