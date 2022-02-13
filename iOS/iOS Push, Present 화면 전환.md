@@ -19,7 +19,7 @@ Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present
 
 첫 방법은 **Segue로 Push**하는 방법이다. 
 
-먼저 Main.storyboard에 ViewController를 하나 생성해주고 아래 영상과 같이 `control`을 누르고 클릭해준 후, 마우스 포인터로 만들어준 ViewController에 `Show` 로 연결해주면 끝이다. 이제 Segue로 Push 버튼을 누르면 화면 전환이 될 것이다.
+먼저 Main.storyboard에 ViewController를 하나 생성해주고 아래 영상과 같이 `우클릭`을 누르고 드래그하여, 마우스 포인터를 만들어준 ViewController에 `Show` 로 연결해주면 끝이다. 이제 Segue로 Push 버튼을 누르면 화면 전환이 될 것이다.
 
 ![Segue로 Push 방법](https://user-images.githubusercontent.com/59376200/152904009-de2bf9a1-8b26-4fb7-a325-764e935673f1.gif)
 
@@ -53,7 +53,7 @@ self.navigationController?.popViewController(animated: true)
 
 ## Segue로 Present
 
-이번에도 ViewController 를 하나 생성해주고, 똑같이 `Control`을 누른 상태로 방금 생성한 ViewController 에 `Present Modally`로 연결해주면 된다.
+이번에도 ViewController 를 하나 생성해주고, 똑같이 `우클릭`을 누른 상태로 방금 생성한 ViewController 에 `Present Modally`로 연결해주면 된다.
 
 ![Segue로 Present 방법](https://user-images.githubusercontent.com/59376200/152903474-90504bfd-7040-403d-a138-aac910e82998.gif)
 
@@ -65,7 +65,7 @@ self.navigationController?.popViewController(animated: true)
 
 1. Segue로 Push와 동일하게 **Cocoa Touch Class 파일을 생성**해준다. (여기서는 임의로 `SeguePresentViewController`로 임의로 정했다.)
 2. Storyboard에서 화면 전환할 ViewController에 **"뒤로가기"** 버튼을 생성해주고, Class에 파일 이름을 먼저 만들어준 **Cocoa Touch Class 파일 이름과 동일하게 맞춘다.** (임의로 정한 `SeguePresentViewController`로 이름을 맞춰줌)
-3. Assistant를 켜서 만들어준 뒤로가기 버튼을 `Control + 클릭`해서 **액션함수로 정의**해준다.
+3. Assistant를 켜서 만들어준 뒤로가기 버튼을 `우클릭 + 드래그`해서 **액션함수로 정의**해준다.
 
 마지막으로 들어갈 코드는 Push방법이 아닌, Present 방법으로 화면전환을 하였기에 아래의 코드를 작성해주면 된다.
 
@@ -87,7 +87,7 @@ self.presentingViewController?.dismiss(animated: true,completion: nil)
 
 ![CodePush Storyboard ID Value](https://user-images.githubusercontent.com/59376200/152977985-557bd9e6-7ae0-47eb-ae25-ffb6625f0a12.png)
 
-그리고 맨 처음 Storyboard에 만들어둔 `Code로 Push` 버튼을 아래와 같이 **ViewController.swift**에 `Control + 드래그`를 통해서 **액션 함수(Action)** 로 정의해준다. 그러면 **@IBAction ...** 형식의 소스가 나타나게된다.
+그리고 맨 처음 Storyboard에 만들어둔 `Code로 Push` 버튼을 아래와 같이 **ViewController.swift**에 `우클릭 + 드래그`를 통해서 **액션 함수(Action)** 로 정의해준다. 그러면 **@IBAction ...** 형식의 소스가 나타나게된다.
 
 ![CodePush 방법](https://user-images.githubusercontent.com/59376200/153128967-43d99578-65ef-4b37-aaa2-ba995d6dbec8.gif)
 
