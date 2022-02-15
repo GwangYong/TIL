@@ -40,10 +40,6 @@
 
 ### n 값에 따른 시간 복잡도
 
-<img width="797" alt="스크린샷 2022-02-14 오후 9 46 51" src="https://user-images.githubusercontent.com/59376200/153866863-11a19495-0cc0-49a5-89fa-f46129ea77a9.png">
-
-이미지 출처 : https://www.bigocheatsheet.com/
-
 <br>
 
 > 코드들은 Swift 언어로 작성했습니다.
@@ -93,29 +89,53 @@ func printTwice(n: Int) {
 
 또한, 앞서 말한것처럼 예시로 30n^2 + 20이라고 해도 빅오 표기법으로는 **O(n^2)으로 표기**한다.
 
-아래의 log n 부터는 공부해서 더 추가할 예정
+#### **O(log n), O(n log n)**
 
-#### **O(log n)**
-- 이진 검색
+아래의 코드처럼 입력 n개를 **절반씩 제외하면서 값을 찾고 배열의 개수가 1이 될 때까지 반복**하며 찾는 방식으로하여, **시간 복잡도는 O(log n)**이 된다.
+
+이는 아래의 예시처럼, 주로 **이진 탐색**에서 많이 사용된다.
+
 ```swift
+let arr: [Int] = [1, 2, 3, 4, 5, 6, 7]
 
-```
+func binarySearch(_ array: [Int], _ num: Int) -> Int {
+    var low = 0
+    var high = array.count - 1
 
-#### **O(n log n)**
-- 정렬 알고리즘
-```swift
+    while low <= high {
+        let mid = (low + high) / 2
+        let guess = array[mid]
 
+        if guess == num {
+            return guess
+        } else if guess > num {
+            high = mid - 1
+        } else {
+            low = mid + 1
+        }
+    }
+    return 0
+}
 ```
 
 #### **O(2^n)**
-- 피보나치 수열
+
+피보나치 수열에서 주로 사용된다.
+
 ```swift
 
 ```
 
 <br>
 
+<img width="797" alt="스크린샷 2022-02-14 오후 9 46 51" src="https://user-images.githubusercontent.com/59376200/153866863-11a19495-0cc0-49a5-89fa-f46129ea77a9.png">
 
+이미지 출처 : https://www.bigocheatsheet.com/
+
+**복잡도 비교**
+**faster**  O(1) < O(log n) < O(n) < O (n^2) < (n^3)< O(2^n)  **slower**
+
+<br>
 
 > 출처 : https://blog.chulgil.me/algorithm/
 
