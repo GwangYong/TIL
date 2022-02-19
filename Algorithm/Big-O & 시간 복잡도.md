@@ -118,10 +118,18 @@ func binarySearch(_ array: [Int], _ num: Int) -> Int {
 
 #### **O(2^n)**
 
-피보나치 수열에서 주로 사용된다.
+O(2^n) 복잡도를 가지는 대표적인 예시로는 **피보나치 수열**을 구하는 알고리즘에 사용된다. 
+
+피보나치 수열이란, 1, 1, 2, 3, 5, 8, ... 처럼 n번째 수와 n + 1 번째 수의 합이 n + 2번째의 수가 되는 수열을 뜻한다. 
 
 ```swift
-
+func fibonacci(_ n: Int) -> Int {
+    if n <= 1 {
+        return n
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2)
+    }
+}
 ```
 
 <br>
@@ -135,13 +143,5 @@ func binarySearch(_ array: [Int], _ num: Int) -> Int {
 
 <br>
 
-> 출처 : https://blog.chulgil.me/algorithm/
-
-<!-- 
-# 추가할것들
-
-- 각 복잡도마다 아이패드로 그려서 그래프 표시 (너무 커지는데.. 어케 줄여보자..)
-- log 관련 2개랑 2^n에 피보나치 수열 공부해서 이해
-- log 관련 2개랑 2^n에 피보나치 수열 코드로 예시 작성
-
- -->
+> **Reference**
+> - https://blog.chulgil.me/algorithm/
