@@ -96,8 +96,6 @@ func printTwice(n: Int) {
 이는 아래의 예시처럼, 주로 **이진 탐색**에서 많이 사용된다.
 
 ```swift
-let arr: [Int] = [1, 2, 3, 4, 5, 6, 7]
-
 func binarySearch(_ array: [Int], _ num: Int) -> Int {
     var low = 0
     var high = array.count - 1
