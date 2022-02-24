@@ -1,10 +1,12 @@
-iOS에는 크게 소스코드를 통해 전환하는 방식과, Storyboard를 통해 전환하는 방식이 있다.
+[블로그 포스팅 주소](https://jud00.tistory.com/entry/iOS-Push-Present-%ED%99%94%EB%A9%B4-%EC%A0%84%ED%99%98%EC%97%90-%EB%8C%80%ED%95%B4-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90)
 
-Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present 방식을 Segue와 Code로 알아보자.
+iOS에는 크게 code를 통해 화면을 전환하는 방식과, 소스 코드를 필요로 하지 않는 세그웨이 방법을 통한 화면 전환 방식이 있다.
+
+Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present 방식을 세그웨이와 소스 코드를 작성하여 만드는 2가지 방법에 대해서 알아보자.
 
 <br>
 
-### 기본 세팅
+## 기본 세팅
 
 처음에는, Navigation Controller를 생성해서 이미자와 같이 만들어준다.
 
@@ -15,9 +17,11 @@ Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present
 
 <br>
 
-## Segue로 Push
+## Segue Push 방식
 
 첫 방법은 **Segue로 Push**하는 방법이다. 
+
+> 세그웨이는 소스코드와 다르게 화면과 화면을 연결하기 위해서 소스 코드를 전혀 사용하지 않는다는 특징이 있다. 다만, 연결된 화면끼리는 스토리보드상에서 화살표로 연결되어있어 화면이 많아지면 보기 불편하다는 단점이 있다.
 
 먼저 Main.storyboard에 ViewController를 하나 생성해주고 아래 영상과 같이 `우클릭`을 누르고 드래그하여, 마우스 포인터를 만들어준 ViewController에 `Show` 로 연결해주면 끝이다. 이제 Segue로 Push 버튼을 누르면 화면 전환이 될 것이다.
 
@@ -25,7 +29,7 @@ Stack을 쌓는 것처럼 Push 하는 방법과, 화면 위에 띄우는 Present
 
 <br>
 
-### Segue로 Push 뒤로가기!
+### Segue Push 뒤로가기
 
 이번에는 뒤로가기 버튼도 만들어보자. 아래의 사진과 같이 `command + N`을 눌러서 **Cocoa Touch Class** 파일을 생성해준다. 
 
@@ -51,7 +55,7 @@ self.navigationController?.popViewController(animated: true)
 
 <br>
 
-## Segue로 Present
+## Segue Present 방식
 
 이번에도 ViewController 를 하나 생성해주고, 똑같이 `우클릭`을 누른 상태로 방금 생성한 ViewController 에 `Present Modally`로 연결해주면 된다.
 
@@ -61,7 +65,7 @@ self.navigationController?.popViewController(animated: true)
 
 <br>
 
-### Segue로 Present 뒤로가기!
+### Segue Present 뒤로가기
 
 1. Segue로 Push와 동일하게 **Cocoa Touch Class 파일을 생성**해준다. (여기서는 임의로 `SeguePresentViewController`로 임의로 정했다.)
 2. Storyboard에서 화면 전환할 ViewController에 **"뒤로가기"** 버튼을 생성해주고, Class에 파일 이름을 먼저 만들어준 **Cocoa Touch Class 파일 이름과 동일하게 맞춘다.** (임의로 정한 `SeguePresentViewController`로 이름을 맞춰줌)
@@ -79,7 +83,7 @@ self.presentingViewController?.dismiss(animated: true,completion: nil)
 
 <br>
 
-## Code로 Push
+## Code Push 방식
 
 이번에는 Segue가 아닌, **코드를 이용하여 Push**를 해보자. 
 
@@ -106,7 +110,7 @@ self.navigationController?.pushViewController(viewController, animated: true)
 
 <br>
 
-### Code로 Push 뒤로가기!
+### Code Push 뒤로가기
 
 (이 방법은 Segue로 Push에서 설명한 뒤로가기와 방법이 동일하다. 하지만, 혹시 몰라서 조금 길게 다시 설명을 적어두었다.)
 
@@ -130,7 +134,7 @@ self.navigationController?.popViewController(animated: true)
 
 <br>
 
-## Code로 Present
+## Code Present 방식
 
 이 방법은 위의 Code로 Push하는 많이 동일하다.
 
@@ -153,7 +157,7 @@ self.present(viewController, animated: true, completion: nil)
 
 <br>
 
-### Code로 Present 뒤로가기!
+### Code Present 뒤로가기
 
 이 역시 Segue, Code 방식이 다른거지, 위의 Segue로 Present와 동일하기 때문에 **Segue로 Present 뒤로가기** 방식과 동일하다.
 
