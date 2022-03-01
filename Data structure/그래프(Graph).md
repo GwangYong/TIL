@@ -90,7 +90,7 @@
 
 <br>
 
-### 인접 리스트
+### 인접 리스트 방식
 
 <img src = "https://user-images.githubusercontent.com/59376200/156202613-9f992924-751f-4328-80f8-607ba53f9c9c.jpeg" width="600" height="300">
 
