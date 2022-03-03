@@ -31,6 +31,7 @@
     - [전달인자와 매개변수](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/%EC%A0%84%EB%8B%AC%EC%9D%B8%EC%9E%90(Argument)%EC%99%80%20%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98(Parameter).md)
     - [인스턴스, 프로퍼티, 메서드](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/%EC%9D%B8%EC%8A%A4%ED%84%B4%EC%8A%A4%2C%20%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0%2C%20%EB%A9%94%EC%84%9C%EB%93%9C.md)
     - [lazy keyword](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/lazy.md)
+    - [NotificationCenter](https://github.com/Gwangyong/TIL/blob/master/iOS/Swift_language/NotificationCenter.md)
 
 - [MVC vs MVVM Pattern](https://github.com/GwangYong/TIL/blob/master/iOS/MVC%20vs%20MVVM%20Pattern.md)
 - [코코아 프레임워크(Cocoa Framework)](https://github.com/Gwangyong/TIL/blob/master/iOS/What%20is%20Cocoa%20Framework%3F.md)
