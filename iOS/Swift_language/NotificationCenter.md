@@ -1,67 +1,85 @@
 ## NotificationCenter(NSNotificationCenter)
 
-NotificationCenter란, 등록된 이벤트가 발생되면 해당 event에 대한 행동을 행하는 데이터 전달 방식 중 하나이다. 간단히 말하면 팀장이 팀원(옵저버)에게 해야할 업무를 필요한 시점에 전달해주는 것이라 생각하면 쉬울 것 같다.
+NotificationCenter란, **등록된 이벤트가 발생되면 해당 event에 대한 행동을 행하는 데이터 전달 방식 중 하나**이다. 
 
-이는 적은 코드로 간단히 구현할 수 있으며, 앱 내의 어떠한 곳에서 메시지를 던져주면 다른 어떠한 곳에서든 이 메시지를 받아서 처리할 수 있다는 장점이 있다.
+NotificationCenter에 등록되어 있다면 그에 맞는 Notification이 발생할 경우, NotificationCenter에서 그에 맞는 일을 알아서 할당해준다.
 
-<br>
-
-## NotificationCenter 발송
-
-NotificationCenter에서는 post가 가장 중요한 핵심이다. 팀원(Name) 에게 일을 맡기는 작업이다.
-
-```swift
-NotificationCenter.default.post(name: NSNotification.Name("Example"), object: text)
-```
-
-위의 코드는 **Example** 라고 하는 팀원의 이름이 불리면, text 라는 object를 보내준다. Example라는 팀원에게 일을 하라고 말하며, 일을 하는데 필요한 text라는 부가 자료를 주는것이라 생각하자.
-
-- name : 전달하고자 하는 notification의 이름이다. 일을 시킬 팀원의 이름을 부를때 사용되는 이름이라고 생각하면 된다.
-- object : 옵저버에게 보내려 하는 객체이다. 전달할 객체가 없다면 nil을 할당해주면 된다. 
-- userInfo : Notification과 관련된 값을 뜻한다. (지금 설명에서는 userInfor를 사용하지 않을 것이다.)
+이는 **적은 코드로 간단히 구현**할 수 있으며, 앱 내의 어떠한 곳에서 메시지를 던져주면 **다른 어떠한 곳에서든 이 메시지를 받아서 처리**할 수 있다는 장점이 있다.
 
 <br>
 
-## NotificationCenter 수신
+## 📌 주요 메소드 설명
 
-위에서 post를 하여 해야할 일을 보내주었으니, 이번에는 일을 담당할 팀이 "네 알겠습니다." 라고 말하며 자신이 해야할 일을 받는것이다.
-
-여기서 사용하는것이 addObserver이다. 아래의 코드를 보자
+### post(name: object: userInfo: )
 
 ```swift
-func NotificationAlert() {
-    NotificationCenter.default.addObserver(
-        self,
-        selector: #selector(dataReceivedExample(_:)),
-        name: NSNotification.Name("Example"),
-        object: nil)
-}
+func post(name Name: NSNotification.Name, object Object: Any?, 
+ userInfo UserInfo: [AnyHashable : Any]? = nil)
 ```
 
-이 코드는 Example 라는 notification이 생기면, dataReceivedExample(_:) 라는 함수를 실행시키는 것이다.
+우선 post 메소드이다. 이 메소드는 **NotificationCenter에서 가장 중요한 핵심** 인데, 정해진 Name 이라는 Notification을 보내는 역할을 한다.
 
-즉, Example 에게 dataReceivedExample(_:) 라는 함수에 있는 일을 한다는 것이다.
+- name : 전달하고자 하는 **notification의 이름**이다. 일을 시킬 사람이나 팀을 부를때 사용되는 이름이라고 생각하면 된다.
+- object : **옵저버에게 보내려 하는 객체**이다. 전달할 객체가 없다면 nil을 할당해주면 된다. 
+- userInfo : Notification과 관련된 값을 뜻한다. 
+
+<br>
+
+### addObserver(_: selector: name: object: )
+
+```swift
+func addObserver(_ observer: Any, 
+                selector selector: Selector, 
+                name Name: NSNotification.Name?, 
+                object Object: Any?)
+```
+
+다음은 **addObserver 메소드**이다. 이 메소드는 정해준 **Name의 Notification이 생기면, selector 안의 정해준 함수를 실행** 한다.
+
+메소드에 대해서 보았으니, 예시를 보면서 더 이해해보도록 하자.
+
+<br>
+
+## NotificationCenter 예시!
+
+A라는 사람이 혼자 자그마한 인터넷 쇼핑몰을 한다고 예시를 들어보자.
+
+우선 물건에 대한 `주문(order)`이 들어오면, 그 주문 들어온 `물건(orderedObject)`을 가지고 우체국으로 가서 택배를 붙인다는 시나리오를 생각해보자.
+
+### **1. Notification post**
+아래의 코드는 `order` 이라는 notification이 들어오면, 주문 들어온 물건인 `orderedObject` 을 가지고 **post** 해주는 코드이다. (주문들어온 물건의 종류가 많다면 구별을 해줘야하겠지만, 여기서는 orderedObject로 통일해서 간단히 생각하자.)
+
+```swift
+NotificationCenter.default.post(name: NSNotification.Name("order"), object: orderedObject)
+```
+
+<br>
+
+### **2. Notification Observer**
+
+이제 쇼핑몰을 운영하는 A는 order notification 즉, **주문 알림**이 언제 올지 **관찰**하고 있어야 하므로, 아래의 코드를 작성하자.
+
+```swift
+NotificationCenter.default.addObserver(self, 
+selector: #selector(checkOrder), 
+name: NSNotification.Name("order"), 
+object: nil)
+```
+
+코드에 대해서 알아보자.
+
+- notification이 오는걸 **관찰하고 있어야 하는 observer**는 `self` 즉, 자기 자신 A씨 본인이 되는것이다.
+- order 이라는 이름의 notification을 받았을 경우, 실행해야 하는 행동은 `checkOrder` 함수가 되는 것이다. (함수는 만들어져있다고 생각하자. 아래에 설명하겠다.)
+- 마지막으로 어떠한 notification 인지 알아야하므로 그 이름이 `order`이 되는 것이다.
+
+간단히 설명해보면, **A씨 자기자신(`self`) 이 관찰하다가 `order` 라는 notification이 관찰되면 `checkOder` 이라는 미리 만들어둔 함수를 통해 해야할 일을 하는것이다.**
+
+위에서 말한 `checkOrder` 함수는, **post** 에 있던 `orderedObject` 객체를 사용하여 물건을 택배사를 통해서 고객에게 배송하는 코드가 되겠지만, 그 코드를 작성할 능력이 없으니 생략하겠다 ㅎㅎ..
 
 
+<br>
 
-<!-- 
-
-[ ] 글 작성 멈추고, 우선 밑에 참고 블로그들 보면서 확실히 이해하자
-
-[ ] 내가 작성한 팀장, 팀원 일 배분 예시가 맞는지 검토
-
-[ ] 지금 예시 Xcode에 작성해뒀는데, 이거 아래 참고 블로그에 있는거 따라한거니까 __다른 방식__ 으로 내가 예시 생각해서 만들어서 이미지 올리고 하자. 블로그 올리기 좋을듯
-즉, 예시 지금만든거 말고 다른 방식으로 내가 생각하고 만들어서 캡쳐해서 `코드랑 설명, 이미지` 다 변경
- 
-[ ] 발송, 수신 이렇게 적은부분 다시 생각해보고 수정할거면 수정하기
-
-[ ] 글 다 작성하면, 중요한 부분 표시하기
-
-[ ] 이거 글 작성하자마자 Blog에 바로 올리자. 정리해두고 시간 지나면 또 올리기 힘들어지니까 이거 다 작성 열심히해서 3/4일 오늘 posting 하자.
-
- -->
-
-
+<!-- Blog에 글 작성할 때는 예시 괜찮은지 보고, 수정할 수 있으면 수정해서 글 올리자. -->
 
 <!-- 
 
