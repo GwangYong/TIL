@@ -1,59 +1,38 @@
-여기에 적는 내용들은 다른 블로그들과 구글링을 통해서 Swift로 알고리즘을 할 때, 도움이 될만한 내용들을 적어둠.
+## 값 입력 프로젝트 생성
 
-## 알고리즘 파일 관리
+swift로 알고리즘을 풀 경우(특히 백준 알고리즘에서 값을 입력받는 경우)에는 `readLine()`을 사용해야한다.
 
-일반적으로 생기는 파일 관리 시나리오이다.
-1. main.swift 파일에서 문제를 푼다.
-2. 완료한 파일 이름을 원하는대로 수정한다. (ex. 6100.swift)
-3. 새로운 main.swift 파일을 생성한다.
+<img src="https://user-images.githubusercontent.com/59376200/135711221-4e25e334-b883-4843-9569-5f148176acbb.png" width="550" height="400">
 
-하지만, 여기서 "expressions are not allowed at the top level"라는 에러가 나오며 빌드가 되지 않을텐데, 이유로는 [공식문서 설명](https://developer.apple.com/swift/blog/?id=7) 을 보면 아래와 같은 설명이 있다.
-
-> “main.swift” file can contain top-level code, and the order-dependent rules apply as well. In effect, the first line of code to run in “main.swift” is implicitly defined as the main entrypoint for the program.
-
-
-대충 main.swift가 Entry Point로 설정되어 있기 때문에 main.swift만 예외로 코드를 작성할 수 있다고 한다.
-
-그러니 이런 상황에서는 이름을 수정한(ex. 6100.swift) 파일을 클릭하여 우측에 속성 탭을 확인하자. 
-
-그러면, 중간쯤에 **"Target membership"** 라는 공간이 있는데, 거기에 있는 체크를 해제하면 이름을 변경한 파일의 코드에 에러가 나지만, 새로 만든 main.swift에 작성한 코드는 빌드가 잘 되어서 다음 문제를 문제없이 풀 수 있다.
-
-<br>
-
-## 키보드 입력받는 방법.
+## 키보드 값 입력받기
 ```swift
-let value = readLine()
+let input = readLine() // 리턴값은 Optional String
+
+let input = readLine()! // 리턴값은 String
 ```
 
-readLine() 리턴값은 Optional String이다.
+## Int 값 입력받기
+```swift
+let num = Int(readLine()!)! // 리턴값은 Int
+
+let num = Int(String(readLine()!))! // 조금 더 속도가 빠르다고함.
+```
 
 <br>
 
 ## 키보드 입력받은 값 공백으로 구분하기
 
-1. .split()으로 구분하기 (예시 1, 2, 3, 4)
+1. split( )으로 구분 (예시 1, 2, 3, 4)
 ```swift
 let nums = readLine()!.split(seperator: " ") // ["1", "2", "3", "4"]
 ```
 
-2. component()를 이용 (예시 동일)
+2. component( )로 구분 (예시 동일)
 ```swift
 let nums = readLine()!.components(seperatedBy: " ") // ["1", "2", "3", "4"]
 ```
 
-### 두 방법의 차이점
-1. import Foundation
-component의 경우에는 Foundation에 있는 instance method이기 떄문에, 반드시 import Foundation을 해주어야한다.
-
-또한 용량이 늘어나며, split의 경우에는 import Foundation을 해주지 않아도 괜찮다.
-
-이만 보면 split를 해주어야 하겠지만, 2번째 차이를 보면 이해를 할 수 있을것이다.
-
-2. 리턴값이 다르다.
-그냥 결과만 보면 별 다를것은 없다. 하지만, 리턴되는 타입이 다르다.
-
-components로 나눈 것은 리턴값이 `String`이지만, split로 나눈 것은 리턴값이 `String.SubSequence`이다. 이로인해 split로 쪼개면 String으로 바로 사용할 수 없다. (물론, map 함수를 사용하면 가능하다.)
-
+두 방법의 차이점에 대해서는 split vs components에 정리해두었음.
 
 <br>
 
@@ -201,11 +180,3 @@ abs(-29) // 29
 
 
 
-
-
-<br>
-
-<!-- 블로그에는 작성 X -->
-> Reference 
-> [알고리즘에 필요한 Swift Basic 총정리](https://twih1203.medium.com/swift-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EC%97%90-%ED%95%84%EC%9A%94%ED%95%9C-swift-basic-%EC%B4%9D%EC%A0%95%EB%A6%AC-d86453bbeaa5)
-> [Swift 알고리즘 - Xcode 환경 세팅](https://jeong9216.tistory.com/54)
