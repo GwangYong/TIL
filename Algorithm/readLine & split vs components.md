@@ -1,12 +1,12 @@
 ## readLine()
 
-swift로 알고리즘 문제를 풀 경우(특히 백준 알고리즘 입력 받을 경우)에는 `readLine()` 함수를 사용해야한다.
+swift로 알고리즘 문제를 풀 경우(특히 백준 알고리즘 입력 받을 경우)에는 `readLine()` 를 사용해야한다.
 
 <img width="743" alt="스크린샷 2021-10-02 오후 4 22 22" src="https://user-images.githubusercontent.com/59376200/135711221-4e25e334-b883-4843-9569-5f148176acbb.png">
 
-Playground에서는 이 함수를 사용할 수 없고 위의 사진처럼 Xcode에서 프로젝트를 생성할 때, `Command Line Tool`로 프로젝트를 생성해야한다.
+Playground에서는 이 readLine()를 사용할 수 없고 위의 사진처럼 Xcode에서 프로젝트를 생성할 때, `Command Line Tool`로 프로젝트를 생성해야한다.
 
-readLine() 함수를 사용하면 콘솔창에 텍스트를 입력할 수 있다.
+readLine() 를 사용하면 콘솔창에 텍스트를 입력할 수 있다.
 
 또한, 문제를 풀기 위해서는 nil을 입력받을 수 없기 때문에 `강제 언래핑(!)`을 사용해야한다.
 
@@ -14,23 +14,26 @@ readLine() 함수를 사용하면 콘솔창에 텍스트를 입력할 수 있다
 
 ### 1. 한 줄만 입력받는 경우
 ```swift
-let num = readLine()!
+let input = readLine()!
 // 물론, 두 줄을 입력받을 경우에는 위의 코드를 2번 작성해주면 된다.
 
 // Int형태로 받는 경우
-let num = Int(readLine()!)!
+let input = Int(readLine()!)!
+
+// 위보다 속도가 조금 더 빠름. 이유는 다음에 정리
+let input = Int(String(readLine()!))!
 ```
 
 <br>
 
 ### 2. 한 줄에 2개 이상의 값을 입력받는 경우
 ```swift
-let num = readLine()!.split(separator: " ") // 매개변수로 받아서 해당 인자를 기준으로 쪼개준다.
-let num = readLine()!.components(separatedBy: " ") // 위와 동일
+let input = readLine()!.split(separator: " ") // 매개변수로 받아서 해당 인자를 기준으로 쪼개준다.
+let input = readLine()!.components(separatedBy: " ") // 위와 동일
 
 // map 함수를 이용해서 Int형태로
-let num = readLine()!.split(separator: " ").map { Int($0)! }
-let num = readLine()!.components(separatedBy: " ").map { Int($0)! }
+let input = readLine()!.split(separator: " ").map { Int($0)! }
+let input = readLine()!.components(separatedBy: " ").map { Int($0)! }
 
 // 위에서 split와 components 2가지 방식을 하였고 출력도 동일하다. 하지만 다른점이 있어서 밑에서 설명할 것이다.
 ```
