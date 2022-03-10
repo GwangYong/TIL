@@ -106,22 +106,21 @@ array.reduce(0, +) // 숫자 합이 나타남. 문자열 합치기도 가능
 
 <br>
 
-## Plus Tip!
+## ETC!
 
-
-1. 앱 종료
+앱 종료
 ```swift
 exit(0)
 ```
 
-2. 무한 루프
+무한 루프
 ```swift
 while true {
     ...
 }
 ```
 
-3. 타입 범위
+타입 범위
 ```swift
 Int, Int64 = 2의 8승 - 1 (9223372036854775807) // 19자리
 Int32      = 2의 6승 - 1 (2147483647)          // 10자리
@@ -129,16 +128,17 @@ Float      = 소수점 6자리까지 표현 가능
 Double     = 소수점 15자리까지 표현 가능
 ```
 
-4. 문자를 ASCII 코드로 변환
+아스키코드(ASCII) 로 변환
 ```swift
-Character("a").asciiValue!
+// Character -> Ascii
+Character("a").asciiValue! // return 타입은 UInt8 이며, 값은 97
+
+// Ascii -> Character, String
+let char = Character(UnicodeScalar(65)) // A
+let str = String(UnicodeScalar(97)) // a
 ```
 
-5. 절대값 변환
+절대값 변환
 ```swift
 abs(-29) // 29
 ```
-
-
-
-
