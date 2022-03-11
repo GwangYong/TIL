@@ -1,3 +1,5 @@
+> 추가할 내용이 있을 때마다 수정하면서 늘려나갈 예정.
+
 ## 값 입력 프로젝트 생성
 
 swift 언어로 알고리즘을 풀 경우(특히 백준 알고리즘에서 값을 입력받는 경우)에는 `readLine()`을 사용해야한다.
@@ -37,9 +39,29 @@ split를 사용할 경우에는 Foundation을 import 해주어야한다.
 
 <br>
 
+## N개의 줄만큼 입력받기
+```swift
+var N = Int(readLine()!)!
+var lines = [Int]()
+for _ in 0..<N { lines.append(Int(readLine()!)!) }
+
+print(lines)
+// 입력
+// 4 (N개의 줄)
+// 5
+// 7
+// 2
+// 9
+
+// 출력 : [5, 7, 2, 9]
+
+```
+
+<br>
+
 ## 배열(Array) 사용
 
-1. 배열 만들기
+**1. 배열 만들기**
 ```swift
 let arr = [Int]() // 빈 배열
 let arr : Array<Int>
@@ -50,7 +72,7 @@ let arr = Array(repeating: 2, count: 5)
 // ex) [2, 2, 2, 2, 2]
 ```
 
-2. 2차원 배열 만들기
+**2. 2차원 배열 만들기**
 ```swift
 let arr = [[Int]]() // 빈 2차원 배열
 
@@ -59,18 +81,18 @@ let arr: [[Int]] = Array(repeating: Array(repeating: 2, count: 3), count: 4)
 // ex) [[2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2]]
 ```
 
-3. 임의의 Data 넣어서 만들기
+**3. 임의의 Data 넣어서 만들기**
 ```swift
 let arr = Array(1...5)  // [1, 2, 3, 4, 5]
 ```
 
-4. 배열 역순으로 출력
+**4. 배열 역순으로 출력**
 ```swift
 arr.reversed()
 arr = arr.reversed()
 ```
 
-5. 배열 정렬하기
+**5. 배열 정렬하기**
 ```swift
 // 오름차순. default도 오름차순 (1, 2, 3, 4...)
 arr.sort()
@@ -108,10 +130,10 @@ array.reduce(0, +) // 숫자 합이 나타남. 문자열 합치기도 가능
 
 ## ETC!
 
-앱 종료
+<!-- 앱 종료
 ```swift
 exit(0)
-```
+``` -->
 
 무한 루프
 ```swift
