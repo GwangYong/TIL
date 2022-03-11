@@ -8,16 +8,16 @@ swift 언어로 알고리즘을 풀 경우(특히 백준 알고리즘에서 값�
 
 ## 키보드 값 입력받기
 ```swift
-let input = readLine() // return 값은 Optional String 형식
+var input = readLine() // return 값은 Optional String 형식
 
-let input = readLine()! // return 값은 String 형식
+var input = readLine()! // return 값은 String 형식
 ```
 
 ## Int 값 입력받기
 ```swift
-let input = Int(readLine()!)! // return 값은 Int
+var input = Int(readLine()!)! // return 값은 Int
 
-let input = Int(String(readLine()!))! // 위보다 조금 더 속도가 빠르다고함.
+var input = Int(String(readLine()!))! // 위보다 조금 더 속도가 빠르다고함.
 ```
 
 <br>
@@ -26,12 +26,12 @@ let input = Int(String(readLine()!))! // 위보다 조금 더 속도가 빠르�
 
 1. **split( )** 으로 구분 (예시: 1 2 3 4)
 ```swift
-let nums = readLine()!.split(seperator: " ") // ["1", "2", "3", "4"]
+var nums = readLine()!.split(seperator: " ") // ["1", "2", "3", "4"]
 ```
 
-2. **component( )** 로 구분 (예시: 1 2 3 4)
+2. **components( )** 로 구분 (예시: 1 2 3 4)
 ```swift
-let nums = readLine()!.components(seperatedBy: " ") // ["1", "2", "3", "4"]
+var nums = readLine()!.components(seperatedBy: " ") // ["1", "2", "3", "4"]
 ```
 
 split를 사용할 경우에는 Foundation을 import 해주어야한다.
@@ -130,19 +130,14 @@ array.reduce(0, +) // 숫자 합이 나타남. 문자열 합치기도 가능
 
 ## ETC!
 
-<!-- 앱 종료
-```swift
-exit(0)
-``` -->
-
-무한 루프
+**무한 루프**
 ```swift
 while true {
     ...
 }
 ```
 
-타입 범위
+**타입 범위**
 ```swift
 Int, Int64 = 2의 8승 - 1 (9223372036854775807) // 19자리
 Int32      = 2의 6승 - 1 (2147483647)          // 10자리
@@ -150,17 +145,51 @@ Float      = 소수점 6자리까지 표현 가능
 Double     = 소수점 15자리까지 표현 가능
 ```
 
-아스키코드(ASCII) 로 변환
+**아스키코드(ASCII) 변환**
 ```swift
-// Character -> Ascii
+// Character to Ascii
 Character("a").asciiValue! // return 타입은 UInt8 이며, 값은 97
 
-// Ascii -> Character, String
+// Ascii to Character, String
 let char = Character(UnicodeScalar(65)) // A
 let str = String(UnicodeScalar(97)) // a
 ```
 
-절대값 변환
+**절대값 변환**
 ```swift
-abs(-29) // 29
+abs(-31) // 29
+abs(31) // 31
 ```
+
+**print 줄 바꿈 안하기**
+```swift
+for i in 1...5 {
+    print(i, terminator: " ")
+}
+// 1, 2, 3, 4, 5
+```
+
+**print 중간에 값 넣기**
+```swift
+print("my", "name", "is", "Miro", separator: "___")
+// 출력: my___name___is___Miro
+```
+
+**for문과 stirde 함수 같이 사용**
+```swift
+let input = Int(readLine()!)!
+
+for i in stride(from: input, to: 0, by: -1) {
+    print(i, terminator: " ")
+}
+// 입력(input): 5일 경우
+// 출력 : 5 4 3 2 1
+
+for i in stride(from: input, through: 0, by: -1) {
+    print(i, terminator: " ")
+}
+// 입력(input): 5일 경우
+// 출력: 5 4 3 2 1 0
+```
+
+위 아래의 차이는, **to이냐 through이냐의 차이**점이다. 자세한 내용을 알고싶다면, [stride 함수](https://jud00.tistory.com/entry/%EC%98%A4%EB%8A%98%EC%9D%98-Swift-%EC%A7%80%EC%8B%9D-stride-%ED%95%A8%EC%88%98-%EB%B0%B1%EC%A4%80-2742%EB%B2%88-%EA%B8%B0%EC%B0%8D-N-%EC%97%AD%EC%88%98-%EA%B5%AC%ED%95%98%EA%B8%B0?category=1010119)을 보자.
