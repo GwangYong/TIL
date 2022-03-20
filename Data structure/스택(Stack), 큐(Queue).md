@@ -1,5 +1,3 @@
-[이 내용을 정리한 개인 기술 블로그](https://jud00.tistory.com/entry/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0-%EC%8A%A4%ED%83%9DStack%EA%B3%BC-%ED%81%90Queue%EC%97%90-%EB%8C%80%ED%95%B4%EC%84%9C-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90?category=1010128)
-
 # 스택(Stack)의 개념
 
 ![LIFO(Last In First Out)](https://user-images.githubusercontent.com/59376200/127250787-bc69ec8e-573e-4f9c-91ee-39409598da00.png)
@@ -29,6 +27,44 @@ top의 가장 위에있는 자료는 가장 최근에 들어온 자료이며, �
 - 역순 문자열 만들기
 - 후위 표기법 계산
 
+<br>
+
+## Stack Code
+
+**Stack 기본 형태. (pop 메소드 부분 제외하면 동일)**
+
+- popLast() 라는 메소드 함수 자체를 Swift 배열에서 지원해줌. 그렇기에 굳이 배열을 Stack 처럼 쓰면되지, Stack은 굳이 안만들어도 괜찮은 것 같다.
+
+```swift
+struct Stack<T> {
+    private var stack: [T] = []
+    
+    public var count: Int {
+        return stack.count
+    }
+    
+    public var isEmpty: Bool {
+        return stack.isEmpty
+    }
+    
+    public mutating func push(_ element: T) {
+        return stack.append(element)
+    }
+    
+    public mutating func pop() -> T? {
+        return isEmpty ? nil : stack.popLast()
+    }
+}
+
+var myStack = Stack<Int>()
+myStack.push(10)
+myStack.push(3)
+myStack.push(13)
+print(myStack) // Stack<Int>(stack: [10, 3, 13])
+myStack.pop()
+print(myStack) // Stack<Int>(stack: [10, 3])
+```
+
 ---
 
 <br>
@@ -36,7 +72,7 @@ top의 가장 위에있는 자료는 가장 최근에 들어온 자료이며, �
 # 큐(Queue)의 개념
 ![FIFO(First In First Out)](https://user-images.githubusercontent.com/59376200/127253000-528edd13-59d3-4cd5-a7c9-8529cc9dae34.png)
 
-`큐(Queue)`는 스택과 비슷하지만 다른 자료구조이다.
+`큐(Queue)`는 스택과 비슷하지만 다른 자료구조이다. Swift 에서는 Queue를 따로 지원하지 않는다. (시스템적인 DispatchQueue 이런건 제외..)
 
 큐는 스택과 다르게, `FIFO(First In First Out)`의 구조를 가진다.
 
@@ -56,3 +92,85 @@ top의 가장 위에있는 자료는 가장 최근에 들어온 자료이며, �
 - 서비스 센터의 대기시간
 - 프로세스 관리
 
+<br>
+
+## Queue Code
+
+```swift
+struct Queue<T> {
+    private var queue: [T] = []
+
+    public var count: Int {
+        return queue.count
+    }
+
+    public var isEmpty: Bool {
+        return queue.isEmpty
+    }
+
+    public mutating func enqueue(_ element: T) {
+        queue.append(element)
+    }
+
+    public mutating func dequeue() -> T? {
+        return isEmpty ? nil : queue.removeFirst()
+    }
+}
+
+var myQueue = Queue<Int>()
+myQueue.enqueue(10)
+myQueue.enqueue(8)
+print(myQueue) // Queue<Int>(queue: [10, 8])
+myQueue.dequeue()
+print(myQueue) // Queue<Int>(queue: [8])
+```
+
+위의 코드는 Stack 코드의 pop 부분을 제외하고는 동일하다.
+
+하지만 여기서는 dequeue를 할 경우, 처음 값이 빠지기 때문에 비어버린 공간에 자리를 한 칸씩 당겨야하기 때문에 **O(1)이 아닌, O(n)의 시간 복잡도가 필요**하게된다.
+
+그래서 아래의 코드를 통하여 그걸 방지해줄 수 있다. **dequeue를 하면 head가 값을 가지고있다가, 어느정도 조건에 채워지면 비워주는 것이다.**
+
+```swift
+struct Queue<T> {
+    private var queue: [T?] = []
+    private var head: Int = 0
+
+    public var count: Int {
+        return queue.count
+    }
+
+    public var isEmpty: Bool {
+        return queue.isEmpty
+    }
+
+    public mutating func enqueue(_ element: T) {
+        queue.append(element)
+    }
+
+    public mutating func dequeue() -> T? {
+        guard head <= queue.count, let element = queue[head] else { return nil }  // element : 10
+        queue[head] = nil
+        head += 1
+
+        if head > 30 {
+            queue.removeFirst(head)
+            head = 0
+        }
+        return element
+    }
+}
+
+var myQueue = Queue<Int>()
+myQueue.enqueue(10)
+myQueue.enqueue(8)
+print(myQueue)
+myQueue.dequeue()
+print(myQueue)
+```
+
+<br>
+
+
+[Stack 코드 출처](https://babbab2.tistory.com/85?category=908011)
+[Queue 코드 출처](https://babbab2.tistory.com/84?category=908011)
