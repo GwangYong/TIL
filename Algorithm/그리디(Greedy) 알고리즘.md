@@ -45,4 +45,5 @@ Greedy는 `단순 무식하게`, `탐욕적으로` 문제를 푸는 알고리즘
 <br>
 
 > Reference
-> - (탐욕법(그리디 알고리즘))[https://velog.io/@contea95/%ED%83%90%EC%9A%95%EB%B2%95%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98]
+> - [탐욕법(그리디 알고리즘)](https://velog.io/@contea95/%ED%83%90%EC%9A%95%EB%B2%95%EA%B7%B8%EB%A6%AC%EB%94%94-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+> - [그리디 알고리즘(Greedy Algorithm)](https://hongjw1938.tistory.com/172)
