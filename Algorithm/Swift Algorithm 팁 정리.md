@@ -34,8 +34,9 @@ var nums = readLine()!.split(seperator: " ") // ["1", "2", "3", "4"]
 var nums = readLine()!.components(seperatedBy: " ") // ["1", "2", "3", "4"]
 ```
 
-split를 사용할 경우에는 Foundation을 import 해주어야한다.
-자세한 내용은 다음에 따로 정리할 예정이다.
+코드 예시로는 다를 게 없어 보이지만, components()를 사용할 경우에는 Foundation을 import 해주어야 하지만, split() 함수는 Swift Standard library 에 속해있기 때문에 별도로 Foundation을 import 해주지 않아도 된다.
+
+- [components와 split 함수 정리한 글](https://jud00.tistory.com/entry/Swift-%EB%AC%B8%EC%9E%90%EC%97%B4-%EB%82%98%EB%88%84%EA%B8%B0-split%EA%B3%BC-Components-%EB%A5%BC-%EC%95%8C%EC%95%84%EB%B3%B4%EC%9E%90)
 
 <br>
 
