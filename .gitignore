@@ -2,3 +2,5 @@
 .replit
 main
 replit.nix
+goorm.manifest
+todo.md
