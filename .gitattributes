@@ -1,2 +1,2 @@
-*.python linguist-detectable=false
-*.swift linguist-detectable=true
+TIL/** linguist-documentation=false
+TIL/** linguist-vendored=false
