@@ -2,3 +2,7 @@ TIL/** linguist-documentation=false
 TIL/** linguist-vendored=false
 TIL/* linguist-vendored
 * linguist-vendored
+
+TIL/**.python linguist-vendored=false
+TIL/*.python linguist-vendored
+*.python linguist-detectable=false
